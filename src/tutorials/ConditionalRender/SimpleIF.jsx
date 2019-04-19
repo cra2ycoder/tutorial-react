@@ -11,10 +11,8 @@ class SimpleIF extends React.Component {
 
   render() {
     const { isLoggedIn } = this.props
-    let view = null
+    let view = <button>Login</button>
     if (isLoggedIn) {
-      view = <button>Login</button>
-    } else {
       view = <button>Logout</button>
     }
     return view
