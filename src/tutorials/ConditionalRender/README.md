@@ -36,3 +36,22 @@ if (isLoggedIn) {
   )
 }
 ```
+
+---
+
+**simple if + logical && Operator**
+
+- true && expression => returns expression
+- false && expression => returns false
+
+```jsx
+const message = ''
+const view = (
+{ message.length > 0 && (
+    <>
+      <div>you have a message!</div>
+      <div>{message}</div>
+    </>
+  )
+})
+```

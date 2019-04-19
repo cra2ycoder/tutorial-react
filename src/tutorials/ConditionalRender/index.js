@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import SimpleIF from './SimpleIF'
 import IfElse from './IfElse'
+import InlineIFLogical from './InlineIFLogical'
 
 ReactDOM.render(
   <>
@@ -11,6 +12,10 @@ ReactDOM.render(
     <IfElse isLoggedIn={false} />
     <IfElse isLoggedIn={true} />
     <hr />
+    <InlineIFLogical />
+    <InlineIFLogical
+      message={'This is working via inline logical && operator '}
+    />
   </>,
   document.getElementById('conditional-render')
 )
