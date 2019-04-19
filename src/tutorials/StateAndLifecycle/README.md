@@ -108,6 +108,10 @@ this.setState(function(state, props) {
 })
 ```
 
+---
+
+## Merge state :(
+
 - state merge the updates and there is no support for deep merge
 - for example, please check the `UserProfile.jsx`
 
