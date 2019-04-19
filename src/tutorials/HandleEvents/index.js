@@ -1,5 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import EventFunctionType from './EventFunctionType'
+import EventAndState from './EventAndState'
 
-ReactDOM.render(<EventFunctionType />, document.getElementById('handle-events'))
+ReactDOM.render(
+  <>
+    <EventFunctionType />
+    <EventAndState />
+  </>,
+  document.getElementById('handle-events')
+)
