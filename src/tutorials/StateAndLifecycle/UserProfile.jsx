@@ -35,7 +35,7 @@ class UserProfile extends React.Component {
     this.setState((state, props) => {
       return {
         info: {
-          firstName: 'test',
+          firstName: 'Michael',
         },
       }
     })

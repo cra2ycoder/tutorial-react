@@ -107,3 +107,40 @@ this.setState(function(state, props) {
   }
 })
 ```
+
+- state merge the updates and there is no support for deep merge
+- for example, please check the `UserProfile.jsx`
+
+```jsx
+// by default, when state declared
+this.state = {
+  info: {
+    firstName: 'John',
+    lastName: 'Doe',
+  },
+  picture: {
+    photoUrl: 'https://via.placeholder.com/150',
+  },
+}
+
+// stage 2: on the first state get updated after calling updateProfileData()
+// lastName gets removed
+this.state = {
+  info: {
+    firstName: 'Michael',
+  },
+  picture: {
+    photoUrl: 'https://via.placeholder.com/150',
+  },
+}
+
+// stage 3: on the first state get updated after calling updatePicture()
+this.state = {
+  info: {
+    firstName: 'Michael',
+  },
+  picture: {
+    photoUrl: 'https://via.placeholder.com/75',
+  },
+}
+```
