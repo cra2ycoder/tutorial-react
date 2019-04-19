@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import '../tutorials'
 
 class App extends React.Component {
   static defaultProps = {}
