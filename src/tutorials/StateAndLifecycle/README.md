@@ -35,3 +35,35 @@ class StateExample extends React.Component {
   }
 }
 ```
+
+## Reading a State
+
+- state can be read anywhere in the component
+
+```jsx
+// using a object destructuring
+const { date } = this.state
+
+// default
+this.state.date
+```
+
+- example
+
+```jsx
+class StateExample extends React.Component {
+  constructor(props) {
+    super(props)
+
+    // state declaring
+    this.state = {
+      date: new Date(),
+    }
+  }
+  render() {
+    // reading a state
+    const { date } = this.state
+    return ''
+  }
+}
+```
