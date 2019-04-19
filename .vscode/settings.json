@@ -1,0 +1,49 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 0,
+
+  "prettier.eslintIntegration": false,
+  "prettier.tslintIntegration": false,
+
+  "css.validate": false,
+  "scss.validate": false,
+
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": false,
+  "javascript.validate.enable": false,
+  "tslint.jsEnable": false,
+
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    // "**/**.md": true,
+    // "**/.prettierrc": true,
+    // "**/.gitignore": true,
+    "**/node_modules": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    // ".prettierrc": true,
+    "**/*.md": true
+    // "**/.gitignore": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.gitignore": true,
+    "**/yarn.lock": true
+  }
+}
