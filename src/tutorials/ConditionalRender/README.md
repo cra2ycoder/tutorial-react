@@ -64,3 +64,16 @@ const view = (
 const { isLoggedIn } = this.props
 return <button>{isLoggedIn ? 'LOGOUT' : 'LOGIN'}</button>
 ```
+
+**Preventing**
+
+- return null
+
+```jsx
+const getMessageView = message => {
+  if (message === undefined || message.length === 0) {
+    return null
+  }
+  return <div>{message}</div>
+}
+```

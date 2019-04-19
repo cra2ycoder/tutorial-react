@@ -4,6 +4,7 @@ import SimpleIF from './SimpleIF'
 import IfElse from './IfElse'
 import InlineIFLogical from './InlineIFLogical'
 import ConditionalOperator from './ConditionalOperator'
+import PreventRender from './PreventRender'
 
 ReactDOM.render(
   <>
@@ -19,6 +20,8 @@ ReactDOM.render(
     />
     <ConditionalOperator />
     <ConditionalOperator isLoggedIn={true} />
+    <PreventRender />
+    <PreventRender message={"Don't prevent!"} />
   </>,
   document.getElementById('conditional-render')
 )
