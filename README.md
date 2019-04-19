@@ -19,10 +19,11 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
 ## Tutorial Pieces
 
-- Basics
+- **Basics**
   - Hello World with JS Plain Function
   - JSX Expressions
   - Components and Props
   - State and LifeCycle
   - Event Handlings
   - Rendering Elements
+  - Conditional Rendering
