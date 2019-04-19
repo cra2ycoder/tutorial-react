@@ -1,12 +1,16 @@
 ## React.CreateElement
 
-    - used to create html dom
+- used to create html dom
+
+---
 
 ## syntax
 
 ```jsx
 React.createElement(tagname[string], tagattr[object], children[string | doms])
 ```
+
+---
 
 ## examples
 
