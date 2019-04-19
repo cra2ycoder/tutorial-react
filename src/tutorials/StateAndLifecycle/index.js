@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 /**
  * @example
  */
-
 class Clock extends React.Component {
   constructor(props) {
     super(props)
