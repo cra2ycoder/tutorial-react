@@ -1,11 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import EventFunctionType from './EventFunctionType'
 
-class HandleEvents extends React.Component {
-  render() {
-    return ''
-  }
-}
-
-export { HandleEvents }
-export default HandleEvents
+ReactDOM.render(<EventFunctionType />, document.getElementById('handle-events'))
