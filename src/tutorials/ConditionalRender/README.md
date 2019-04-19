@@ -55,3 +55,12 @@ const view = (
   )
 })
 ```
+
+**Conditional Operator**
+
+- condition ? true : false
+
+```jsx
+const { isLoggedIn } = this.props
+return <button>{isLoggedIn ? 'LOGOUT' : 'LOGIN'}</button>
+```
