@@ -11,10 +11,13 @@ class SimpleIF extends React.Component {
 
   render() {
     const { isLoggedIn } = this.props
+
     let view = <button>Login</button>
+    // simple if rendering
     if (isLoggedIn) {
       view = <button>Logout</button>
     }
+
     return view
   }
 }
