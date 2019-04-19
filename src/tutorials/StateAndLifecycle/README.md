@@ -67,3 +67,43 @@ class StateExample extends React.Component {
   }
 }
 ```
+
+## updating state
+
+- setState method is used to update the state
+
+```jsx
+this.setState({
+  date: new Date(),
+})
+```
+
+- **NOTE:**
+
+  - cant be assigned like a property since that wont re-render the component
+
+  ```jsx
+  // this wont re-render
+  this.state.date = new Date()
+
+  // have to use like this
+  this.setState({
+    date: new Date(),
+  })
+  ```
+
+  - when required to update the state with use of props
+
+    ```jsx
+    // using arrow function
+    this.setState((state, props) => ({
+      counter: state.counter + props.increment,
+    }))
+
+    // using normal function
+    this.setState(function(state, props) {
+      return {
+        counter: state.counter + props.increment,
+      }
+    })
+    ```
