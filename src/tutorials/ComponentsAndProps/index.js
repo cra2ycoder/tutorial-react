@@ -68,6 +68,7 @@ class PersonInfo extends React.Component {
   }
 }
 
+// main component
 class Person extends React.Component {
   render() {
     return (
