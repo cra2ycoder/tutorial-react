@@ -4,20 +4,24 @@ import ProductRow from './ProductRow'
 
 class ProductTable extends React.Component {
   static defaultProps = {
+    isStock: false,
     data: [],
   }
   renderCategoryTable = () => {
-    const { data } = this.props
+    const { data, isStock } = this.props
     const categoryTitle = data[0].category
+
     return (
       <>
         <ProductCategoryRow title={categoryTitle} />
         <ul>
           {data.map((item, idx) => {
             return (
-              <li key={'id' + idx}>
-                <ProductRow {...item} />
-              </li>
+              (!isStock || isStock === item.stocked) && (
+                <li key={'id' + idx}>
+                  <ProductRow {...item} />
+                </li>
+              )
             )
           })}
         </ul>

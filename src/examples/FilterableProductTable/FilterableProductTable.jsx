@@ -8,10 +8,18 @@ class FilterableProductTable extends React.Component {
 
     this.state = {
       category: '',
+      shouldStockAvailable: undefined,
     }
   }
   static defaultProps = {
     list: [],
+  }
+
+  getUserInputFromCheckbox = res => {
+    // console.log('getUserInputFromCheckbox -> ', res)
+    this.setState({
+      shouldStockAvailable: res ? true : undefined,
+    })
   }
 
   getUserInputFromSearch = res => {
@@ -21,7 +29,7 @@ class FilterableProductTable extends React.Component {
     })
   }
 
-  renderProductTable(category) {
+  renderProductTable(category, isStock) {
     // console.log('renderProductTable: ' + category)
     const { list } = this.props
 
@@ -31,15 +39,19 @@ class FilterableProductTable extends React.Component {
       return categoryName.indexOf(category) > -1
     })
 
-    return <ProductTable data={filteredList} />
+    return <ProductTable data={filteredList} isStock={isStock} />
   }
 
   render() {
-    const { category } = this.state
+    const { category, shouldStockAvailable } = this.state
     return (
       <>
-        <SearchBar getUserInput={this.getUserInputFromSearch} />
-        {category.length > 0 && this.renderProductTable(category)}
+        <SearchBar
+          getUserInput={this.getUserInputFromSearch}
+          getCheckboxInput={this.getUserInputFromCheckbox}
+        />
+        {category.length > 0 &&
+          this.renderProductTable(category, shouldStockAvailable)}
       </>
     )
   }
