@@ -11,17 +11,17 @@
 
 ## Component Names
 
-- FilterableProductTable (orange): contains the entirety of the example
-- SearchBar (blue): receives all user input
-- ProductTable (green): displays and filters the data collection based on user input
-- ProductCategoryRow (turquoise): displays a heading for each category
-- ProductRow (red): displays a row for each product
+- **FilterableProductTable (orange):** contains the entirety of the example
+- **SearchBar (blue):** receives all user input
+- **ProductTable (green):** displays and filters the data collection based on user input
+- **ProductCategoryRow (turquoise):** displays a heading for each category
+- **ProductRow (red):** displays a row for each product
 
 ## Hierarchy planned
 
-- FilterableProductTable
+- **FilterableProductTable**
 
-  - SearchBar
-  - ProductTable
-    - ProductCategoryRow
-    - ProductRow
+  - **SearchBar**
+  - **ProductTable**
+    - **ProductCategoryRow**
+    - **ProductRow**
