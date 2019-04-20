@@ -12,6 +12,12 @@ class TimeCalculator extends React.Component {
     }
   }
 
+  /**
+   * @description
+   * 1. getting the value from TimeFrom
+   * 2. convert the value
+   * 3. assign to state
+   */
   convertHoursToMins = hours => {
     this.setState({
       hours: hours,
@@ -19,6 +25,12 @@ class TimeCalculator extends React.Component {
     })
   }
 
+  /**
+   * @description
+   * 1. getting the value from TimeFrom
+   * 2. convert the value
+   * 3. assign to state
+   */
   convertMinsToHours = mins => {
     this.setState({
       hours: mins / 60,
@@ -27,6 +39,12 @@ class TimeCalculator extends React.Component {
   }
 
   render() {
+    /**
+     * @description
+     * 1. get the hours and mins from state
+     * 2. assign as prop value to the TimeForm
+     * 3. Pass TimeCalculator global function as callback to TimeForm
+     */
     const { hours, mins } = this.state
     return (
       <>

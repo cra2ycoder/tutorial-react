@@ -12,6 +12,11 @@ class TimeForm extends React.Component {
     onUpdateCbk: () => {},
   }
 
+  /**
+   * @description
+   * when input field gets changing the input value will be shared to TimeCalculator
+   * to do the calculation
+   */
   onInputChange = e => {
     const { onUpdateCbk } = this.props
     onUpdateCbk(e.target.value)
