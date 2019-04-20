@@ -1,15 +1,15 @@
 # example with filter table
 
 - Implemented as per the concept given in Facebook tutorial page
-  **FYR**: https://reactjs.org/docs/thinking-in-react.html
+  - **FYR**: https://reactjs.org/docs/thinking-in-react.html
 
-**UI**
+## UI
 ![](https://reactjs.org/static/thinking-in-react-mock-1071fbcc9eed01fddc115b41e193ec11-4dd91.png)
 
-**Component Splitup**
+## Component Splitup
 ![](https://reactjs.org/static/thinking-in-react-components-eb8bda25806a89ebdc838813bdfa3601-82965.png)
 
-**Component Names**
+## Component Names
 
 - FilterableProductTable (orange): contains the entirety of the example
 - SearchBar (blue): receives all user input
@@ -17,7 +17,7 @@
 - ProductCategoryRow (turquoise): displays a heading for each category
 - ProductRow (red): displays a row for each product
 
-**Hierarchy planned**
+## Hierarchy planned
 
 - FilterableProductTable
 
