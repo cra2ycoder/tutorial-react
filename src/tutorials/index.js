@@ -18,3 +18,4 @@ export * from './basics/Composition'
  * Advanced
  */
 export * from './advanced/Accessibility'
+export * from './advanced/CodeSplitting'
