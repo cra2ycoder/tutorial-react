@@ -4,6 +4,8 @@
 Accessibility(a11y) is huge topic to learn! so we need to go through
 the a11y guidelines before we get into start with React. So, I will create a new repository for learning only accessibility in future. Hence, I am leaving this in half of a way!
 
+---
+
 - also known as `a11y`
 
   - how its named as `a11y`, see below:
