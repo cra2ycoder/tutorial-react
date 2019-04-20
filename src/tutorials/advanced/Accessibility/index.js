@@ -8,9 +8,9 @@ class Disclaimer extends React.Component {
         <h1>Disclaimer</h1>
         <p>
           Accessibility(a11y) is huge topic to learn! so we need to go through
-          the a11y guidelines and needs to work on it native html code. So, I
-          will create a new repo for learning this particular topic! Since its
-          too HUGE!
+          the a11y guidelines before we get into start with React. So, I will
+          create a new repository for learning only accessibility in future.
+          Hence, I am leaving this in half of a way!
         </p>
       </>
     )
