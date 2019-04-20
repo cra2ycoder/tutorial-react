@@ -27,3 +27,8 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - Event Handlings
   - Rendering Elements
   - Conditional Rendering
+  - List and Keys
+  - Forms
+  - Lifting State Up
+  - Composition vs Inheritance
+  - Thinking in React
