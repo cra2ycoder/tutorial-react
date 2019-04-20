@@ -20,6 +20,7 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 ## Tutorial Pieces
 
 - **Basics**
+
   - Hello World with JS Plain Function
   - JSX Expressions
   - Components and Props
@@ -32,3 +33,12 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - Lifting State Up
   - Composition vs Inheritance
   - Thinking in React
+
+- **Advanced**
+
+  - Accessibility (_dropped, will create new repo_)
+  - Code Splitting
+
+- **Example**
+  - FilterableProductTable
+  - Routes

@@ -4,9 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 
-// const Home = lazy(() => import('./pages/Home'))
-// const About = lazy(() => import('./pages/About'))
-
 /**
  * @description
  * normal loading with routers
@@ -24,4 +21,32 @@ class Routes extends React.Component {
   }
 }
 
-ReactDOM.render(<Routes />, document.getElementById('routes'))
+/**
+ * @description
+ * loading with lazy + routes
+ */
+const LazyHome = lazy(() => import('./pages/Home'))
+const LazyAbout = lazy(() => import('./pages/About'))
+
+class RoutesWithLazy extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Suspense fallback={<div>loading...</div>}>
+          <Switch>
+            <Route exact path="/" component={LazyHome} />
+            <Route path="/about" component={LazyAbout} />
+          </Switch>
+        </Suspense>
+      </BrowserRouter>
+    )
+  }
+}
+
+ReactDOM.render(
+  <>
+    <Routes />
+    <RoutesWithLazy />
+  </>,
+  document.getElementById('routes')
+)
