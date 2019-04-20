@@ -3,13 +3,30 @@ import ProductCategoryRow from './ProductCategoryRow'
 import ProductRow from './ProductRow'
 
 class ProductTable extends React.Component {
-  render() {
+  static defaultProps = {
+    data: [],
+  }
+  renderCategoryTable = () => {
+    const { data } = this.props
+    const categoryTitle = data[0].category
     return (
       <>
-        <ProductCategoryRow />
-        <ProductRow />
+        <ProductCategoryRow title={categoryTitle} />
+        <ul>
+          {data.map((item, idx) => {
+            return (
+              <li key={'id' + idx}>
+                <ProductRow {...item} />
+              </li>
+            )
+          })}
+        </ul>
       </>
     )
+  }
+  render() {
+    const { data } = this.props
+    return <>{data && data.length > 0 && this.renderCategoryTable()}</>
   }
 }
 
