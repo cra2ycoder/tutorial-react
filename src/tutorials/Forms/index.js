@@ -8,26 +8,56 @@ class FeedbackForm extends React.Component {
     this.state = {
       firstName: '',
       lastName: '',
-      gender: '',
+      gender: 'Male',
       comments: '',
     }
+
+    // this.submit = this.submit.bind(this)
   }
 
-  onUpdate(e) {}
+  onChange = e => {
+    // console.log(this)
+    // console.log(e.target.name)
+    // console.log(e.target.value)
+    // console.log('on update triggered')
 
-  submit(e) {}
+    const name = e.target.name
+    this.setState({
+      [name]: e.target.value,
+    })
+    // console.log(this.state)
+  }
+
+  submit = e => {
+    e.preventDefault()
+    // console.log(this)
+    console.log(this.state)
+    console.log('submit triggered!')
+  }
 
   render() {
     const { firstName, lastName, gender, comments } = this.state
     return (
-      <form>
-        <input placeholder={'Enter your First Name'} />
-        <input placeholder={'Enter your Last Name'} />
-        <select>
+      <form onSubmit={this.submit}>
+        <input
+          name="firstName"
+          placeholder={'Enter your First Name'}
+          onChange={this.onChange}
+        />
+        <input
+          name="lastName"
+          placeholder={'Enter your Last Name'}
+          onChange={this.onChange}
+        />
+        <select name="gender" onChange={this.onChange} value={gender}>
           <option>Male</option>
           <option>Female</option>
         </select>
-        <textarea placeholder={'Enter your comments'} />
+        <textarea
+          name="comments"
+          placeholder={'Enter your comments'}
+          onChange={this.onChange}
+        />
         <button>submit</button>
       </form>
     )
