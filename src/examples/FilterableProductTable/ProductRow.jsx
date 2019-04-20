@@ -1,8 +1,18 @@
 import React from 'react'
 
 class ProductRow extends React.Component {
+  static defaultProps = {
+    name: 'undefined',
+    price: '$0.00',
+  }
   render() {
-    return
+    const { name, price } = this.props
+    return (
+      <>
+        <span>{name}</span>
+        <span> {price}</span>
+      </>
+    )
   }
 }
 
