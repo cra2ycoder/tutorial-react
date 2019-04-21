@@ -9,14 +9,16 @@ function FetchExample(props) {
     fetch(url)
       .then(res => res.json())
       .then(data => {
+        // set response with the useState function
         setResponse(data.value)
       })
       .catch(err => console.log(err))
   }
 
   useEffect(() => {
+    // making fetch call
     async function fetchData() {
-      const res = await getAPIResponse()
+      await getAPIResponse()
     }
     fetchData()
   }, [])
