@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Greetings from './Greetings'
 import Counter from './Counter'
+import MultipleStateTypes from './MultipleStateTypes'
 
 ReactDOM.render(
   <>
@@ -9,6 +10,8 @@ ReactDOM.render(
     <Greetings />
     <hr />
     <Counter />
+    <hr />
+    <MultipleStateTypes />
   </>,
   document.getElementById('use-state')
 )
