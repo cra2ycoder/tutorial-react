@@ -1,7 +1,7 @@
 # Effect Hooks
 
 - used to do the side effects in the function components
-- `Effect Hooks` is combination three react component life cycles
+- `Effect Hooks` is combination of three react component life cycles or combined
 
   - componentDidMount
   - componentDidUpdate
@@ -30,6 +30,10 @@ useEffect(() => {
   return function cleanup() {}
 })
 ```
+
+## examples
+
+- life cycle -> `EffectLifeCycle.jsx`
 
 ## Reference Link
 
