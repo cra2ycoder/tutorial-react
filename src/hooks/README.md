@@ -74,6 +74,36 @@ yarn install
 }
 ```
 
+## Rules of Hooks
+
+- Don't call Hooks **inside loops, conditions, or nested functions**
+  - instead always use at the top level in the react function components
+- Add ESLint plugin for hooks lints `eslint-plugin-react-hooks` (see above)
+- Hooks are called based on the order which declared in the code flow
+- DON'T make any conditions on the hooks function instead use inside of it
+
+  - wrong
+
+  ```jsx
+  // 🔴 We're breaking the first rule by using a Hook in a condition
+  if (name !== '') {
+    useEffect(function persistForm() {
+      localStorage.setItem('formData', name)
+    })
+  }
+  ```
+
+  - correct
+
+  ```jsx
+  useEffect(function persistForm() {
+    // 👍 We're not breaking the first rule anymore
+    if (name !== '') {
+      localStorage.setItem('formData', name)
+    }
+  })
+  ```
+
 ## FAQ
 
 https://reactjs.org/docs/hooks-faq.html#which-versions-of-react-include-hooks
