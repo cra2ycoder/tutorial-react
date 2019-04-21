@@ -108,6 +108,13 @@ function ObjectState() {
     return items
   }
 
+  /**
+   * @note
+   * note, here we have to add previous list items
+   * so require to use spread/rest operator to the same
+   * else the type will be get changed and error will be thrown
+   * useState always merge the data, no concat / maintaining the previous value
+   */
   function onTypingNewName(e) {
     setUserData({ ...user, name: e.target.value })
   }
