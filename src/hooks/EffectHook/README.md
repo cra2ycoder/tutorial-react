@@ -86,6 +86,10 @@ useEffect(() => {
 
   - example of cleanup function
 
+- with fetch example - `FetchExample.jsx`
+
+  - using fetch with `useEffect()`
+
 ## Reference Link
 
 https://reactjs.org/docs/hooks-effect.html
