@@ -13,5 +13,5 @@ ReactDOM.render(
     <hr />
     <MultipleStateTypes />
   </>,
-  document.getElementById('use-state')
+  document.getElementById('state-hook')
 )
