@@ -23,8 +23,10 @@ const [count, setCount] = useState(0)
 - we can have `n` of `useState()` in one function component
 - naming on the variables inside the array is not strict, we can have any
   for underStanding, keep the value variable and function name similar to understand
+- Please use `spread or rest operator (...)` when using `Array` and `Object` since `useState()` will merge the data and so it wont maintain any previous value
 
 ## example
 
 - single `useState()` -> `Counter.jsx`
 - multiple `useState()` -> `Greetings.jsx`
+- multiple types of state with `useState()` -> `MultipleStateTypes.jsx`
