@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
 function Row(props) {
   const { name, children } = props
@@ -10,7 +10,8 @@ function Row(props) {
   )
 }
 
-function Greetings(props) {
+function Greetings() {
+  // adding multiple state objects
   const [name, setName] = useState('Mary')
   const [surname, setSurname] = useState('Poppins')
 
@@ -35,3 +36,4 @@ function Greetings(props) {
 }
 
 export { Row, Greetings }
+export default Greetings

@@ -9,8 +9,10 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <div>Hello, Welcome!</div>
-        <div>My First React App</div>
+        <h3>Hello, Welcome!</h3>
+        <h1>My First React App</h1>
+        <br />
+        <hr />
       </>
     )
   }

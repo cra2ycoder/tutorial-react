@@ -17,7 +17,7 @@
 
 - **Hooks provides direct API**
 
-  - you may already familier with: props, state, context, ref and lifecycle.
+  - you may already familier with: `props, state, context, ref and lifecycle.`
   - Hooks just provide you alternate powerful way to work on the same features.
 
 - **Update your all packages when updating react**
@@ -30,23 +30,23 @@
 - **Hooks let you use more of React's features without classes**
 
 - **render:**
-  - as the hooks are functional components means just like functions, so no render()will be required
+  - as the hooks are functional components means just like functions, so no render() will be required
 
 ## Core pieces
 
 - **State Hook:** (state management)
 
-  - this.state + this.setState => useState()
+  - `this.state + this.setState => useState()`
 
 - **Effect Hook** (life cycle)
 
-  - componentDidMount + componentDidUpdate + componentWillUnmount => useEffect()
-  - componentDidCatch + getDerivedStateFromError => there are no hooks methods yet but will be added soon.
+  - `componentDidMount + componentDidUpdate + componentWillUnmount` => `useEffect()`
+  - `componentDidCatch + getDerivedStateFromError` => there are no hooks methods yet but will be added soon.
 
 - **Custom Hooks** (build our own hooks)
 - **Other Hooks** (using context with hooks)
 
-## ESLint support for HOOK
+## ESLint support for Hooks
 
 - add the following package in your `devDependencies`
 
