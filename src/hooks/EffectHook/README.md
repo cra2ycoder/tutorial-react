@@ -80,6 +80,12 @@ useEffect(() => {
 
 - life cycle -> `EffectLifeCycle.jsx`
 
+  - this shows how the `useEffect()` flow works
+
+- window event listeners -> `WindowResize.jsx`
+
+  - this shows how the event are added and removed when the clean function triggered
+
 ## Reference Link
 
 https://reactjs.org/docs/hooks-effect.html
