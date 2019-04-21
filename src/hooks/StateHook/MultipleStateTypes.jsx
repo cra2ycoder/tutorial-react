@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Row } from './Greetings'
+import Row from './../../components/Row'
 
 /**
  * @example

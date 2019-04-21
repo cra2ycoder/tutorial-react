@@ -1,14 +1,5 @@
 import React, { useState } from 'react'
-
-function Row(props) {
-  const { name, children } = props
-  return (
-    <fieldset>
-      <legend>{name}</legend>
-      {children}
-    </fieldset>
-  )
-}
+import Row from './../../components/Row'
 
 function Greetings() {
   // adding multiple state objects
@@ -35,5 +26,5 @@ function Greetings() {
   )
 }
 
-export { Row, Greetings }
+export { Greetings }
 export default Greetings
