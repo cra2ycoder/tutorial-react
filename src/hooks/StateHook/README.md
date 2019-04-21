@@ -21,8 +21,8 @@ const [count, setCount] = useState(0)
 ## Notes
 
 - we can have `n` of `useState()` in one function component
-- naming on the variables inside the array is not strict, we can have any
-  for underStanding, keep the value variable and function name similar to understand
+- naming on the variables inside the array is not strict, we can have any,
+  but for understanding, keep the value name and function name similarly
 - Please use `spread or rest operator (...)` when using `Array` and `Object` since `useState()` will merge the data and so it wont maintain any previous value
 
 ## example
