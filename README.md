@@ -44,6 +44,7 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
   - [State Hook](https://reactjs.org/docs/hooks-state.html)
   - [Effect Hook](https://reactjs.org/docs/hooks-effect.html)
+  - [Custom Hook](https://reactjs.org/docs/hooks-custom.html)
 
 - **Example** (see: src/examples)
 
