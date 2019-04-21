@@ -94,12 +94,43 @@ function ObjectState() {
     name: 'John',
     age: 30,
     degree: 'mca',
-    weight: 70,
-    height: 5.6,
   })
+
+  const renderUIForObject = () => {
+    let items = []
+    for (let p in user) {
+      items.push(
+        <li key={p}>
+          {p} : {user[p]}
+        </li>
+      )
+    }
+    return items
+  }
+
+  function onTypingNewName(e) {
+    setUserData({ ...user, name: e.target.value })
+  }
+
+  function onTypingNewAge(e) {
+    setUserData({ ...user, age: e.target.value })
+  }
+
+  function onTypingNewDegree(e) {
+    setUserData({ ...user, degree: e.target.value })
+  }
+
   return (
     <Row name="Object">
       <h2>Object State</h2>
+      <ul>{renderUIForObject()}</ul>
+      <input placeholder="Enter new name!" onChange={onTypingNewName} />
+      <input
+        placeholder="Enter new age!"
+        type="number"
+        onChange={onTypingNewAge}
+      />
+      <input placeholder="Enter new degree!" onChange={onTypingNewDegree} />
     </Row>
   )
 }
