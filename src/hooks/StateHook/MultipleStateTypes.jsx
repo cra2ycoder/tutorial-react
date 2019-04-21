@@ -45,15 +45,42 @@ function NumberState() {
  * handling list of data in state
  */
 function ArrayState() {
+  const [fruitName, setFruitName] = useState('')
   const [fruitList, setFruitList] = useState([
     'apple',
     'orange',
     'pineapple',
     'mango',
   ])
+
+  function onFruitNameTyping(e) {
+    setFruitName(e.target.value)
+  }
+
+  function addFruit() {
+    /**
+     * @note
+     * note, here we have to add previous list items
+     * so require to use spread/rest operator to the same
+     * else the type will be get changed and error will be thrown
+     * useState always merge the data, no concat / maintaining the previous value
+     */
+    setFruitList([...fruitList, fruitName])
+  }
+
+  const hasFruits = Array.isArray(fruitList) && fruitList.length > 0
+
   return (
     <Row name="Array">
       <h2>Array State</h2>
+      <ul>
+        {hasFruits &&
+          fruitList.map((item, id) => {
+            return <li key={'id' + id}>{item}</li>
+          })}
+      </ul>
+      <input placeholder="Enter new fruit name!" onChange={onFruitNameTyping} />
+      <button onClick={addFruit}>ADD</button>
     </Row>
   )
 }
