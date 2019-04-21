@@ -84,7 +84,7 @@ useEffect(() => {
 
 - window event listeners -> `WindowResize.jsx`
 
-  - this shows how the event are added and removed when the clean function triggered
+  - example of cleanup function
 
 ## Reference Link
 
