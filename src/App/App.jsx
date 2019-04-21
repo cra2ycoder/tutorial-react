@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import '../tutorials'
-import '../examples'
+// import '../examples'
+import '../hooks'
 
 class App extends React.Component {
   static defaultProps = {}
