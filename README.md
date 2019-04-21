@@ -21,24 +21,29 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
 - **Basics**
 
-  - Hello World with JS Plain Function
-  - JSX Expressions
-  - Components and Props
-  - State and LifeCycle
-  - Event Handlings
-  - Rendering Elements
-  - Conditional Rendering
-  - List and Keys
+  - Components And Props
+  - Composition
+  - Conditional Render
   - Forms
-  - Lifting State Up
-  - Composition vs Inheritance
-  - Thinking in React
+  - Handling Events
+  - Hello World
+  - JSX Expressions
+  - Lift Up State
+  - List and Keys
+  - React Create Element
+  - Rendering Element
+  - State and Life Cycle
 
 - **Advanced**
 
   - Accessibility (_dropped, will create new repo_)
   - Code Splitting
 
+- **Hooks**
+
+  - State Hook
+  - Effect Hook
+
 - **Example**
-  - FilterableProductTable
+  - Filterable Product Table
   - Routes
