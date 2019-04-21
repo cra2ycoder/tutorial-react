@@ -19,7 +19,7 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
 ## Tutorial Pieces
 
-- **Basics**
+- **Basics** (see: src/tutorials/basic)
 
   - [Components And Props](https://reactjs.org/docs/components-and-props.html)
   - [Composition](https://reactjs.org/docs/composition-vs-inheritance.html)
@@ -34,17 +34,18 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - [Rendering Element](https://reactjs.org/docs/rendering-elements.html)
   - [State and Life Cycle](https://reactjs.org/docs/state-and-lifecycle.html)
 
-- **Advanced**
+- **Advanced** (see: src/tutorials/advanced)
 
   - [Accessibility](https://reactjs.org/docs/accessibility.html)
     (_dropped, will create new repo_)
   - [Code Splitting](https://reactjs.org/docs/code-splitting.html)
 
-- **Hooks**
+- **Hooks** (see: src/hooks)
 
   - [State Hook](https://reactjs.org/docs/hooks-state.html)
   - [Effect Hook](https://reactjs.org/docs/hooks-effect.html)
 
-- **Example**
+- **Example** (see: src/examples)
+
   - [Filterable Product Table](https://reactjs.org/docs/thinking-in-react.html)
   - [Routes](https://reacttraining.com/react-router/web/api/BrowserRouter)
