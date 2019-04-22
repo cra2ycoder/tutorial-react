@@ -1,2 +1,2 @@
-// export * from './FilterableProductTable'
+export * from './FilterableProductTable'
 export * from './Routes'
