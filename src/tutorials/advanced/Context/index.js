@@ -7,14 +7,14 @@ const { Provider, Consumer } = createContext({})
  * @description
  * profile card
  */
-class Profile extends React.Component {
+class UserProfile extends React.Component {
   render() {
     // const { name, username, email, phone, website } = this.props
     return (
       <Consumer>
         {data => (
           <fieldset>
-            <legend>Profile</legend>
+            <legend>User Profile</legend>
             <div>{data.name}</div>
             <div>{data.username}</div>
             <div>{data.email}</div>
@@ -78,7 +78,7 @@ class UserCard extends React.Component {
       <Provider value={userData}>
         {this.state.data.length > 0 && (
           <>
-            <Profile />
+            <UserProfile />
             <Address />
           </>
         )}
