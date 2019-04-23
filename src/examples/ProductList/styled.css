@@ -1,0 +1,21 @@
+.product-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.product-card {
+  width: 140px;
+  position: relative;
+  padding: 10px;
+  border: 1px solid;
+}
+
+.product-card-image {
+  width: 100%;
+  position: relative;
+}
+
+.product-card-image img {
+  width: 100%;
+}
