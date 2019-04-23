@@ -203,7 +203,8 @@ useEffect(lifeCycleFunction)
 ```jsx
 /**
  * @type1
- * [] -> used to use the life cycle methods only for componentDidMount + componentWillUnmount - only once
+ * [] -> uses only the componentDidMount + componentWillUnmount life cycle
+ * only once
  */
 useEffect(() => {}, [])
 ```
@@ -218,6 +219,24 @@ useEffect(() => {}, [])
  */
 const [name, setName] = useState('joe')
 useEffect(() => {}, [name])
+```
+
+- when you need clean something on each life cycle happens
+- ex: event listeners, object memory etc.,
+
+```jsx
+/**
+ * @type3
+ * name === 'joe' -> useEffect won't trigger any life cycle
+ * only works for different name
+ */
+const [name, setName] = useState('joe')
+useEffect(() => {
+  // we need add clean function with return syntax
+  return () => {
+    // clean statement need to be written here
+  }
+}, [name])
 ```
 
 ---
