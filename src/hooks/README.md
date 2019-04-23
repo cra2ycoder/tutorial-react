@@ -165,7 +165,7 @@ function MyComponent(props) {
 }
 ```
 
-## Effect Hook - useState()
+## Effect Hook - useEffect()
 
 - for life cycle based state and data management
 - `componentDidMount + componentDidUpdate + componentWillUnmount` => **useEffect()**
