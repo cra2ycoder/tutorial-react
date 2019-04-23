@@ -116,7 +116,7 @@ yarn install
 - comes with `eslint-plugin-react-hooks` (need to add the package)
 - **NO MORE Classes**, just simply requires function based components
 - **NO MORE Life cycle** to handle/update the data, `useState() and useEffect()` will take care everything automatically
-- Data flow with all the component tree from main component - can be done very easily with use of `useContext()` - To be simple, **NO MORE Consumer** inside the code
+- Data flow with all the component tree from main component - can be done very easily with use of `useContext()` - To be simple, **NO MORE Consumer** with the simple static data components inside the code
 - **flexible and re-usable**, can be multiple into very small small pieces without code breaking
 - also can be done `custom hooks`
 
