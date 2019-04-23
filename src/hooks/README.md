@@ -274,7 +274,7 @@ function MyComponent(props) {
 - to use context with the component
 - most simplified way
 
-- syntax
+**Syntax**
 
 ```jsx
 import React, { useContext } from "react";
@@ -289,8 +289,8 @@ const currentContext = useContext(MyContext);
 <div>{currentContext.name}</div>
 <div>{currentContext.age}</div>
 ```
-
-- sample
+---
+**Example**
 
 ```jsx
 import React, { useContext } from 'react'
