@@ -125,7 +125,7 @@ yarn install
 - for state management
 - `this.state + this.setState()` => **useState()**
 
-- syntax
+**How to use?**
 
 ```jsx
 import React, { useState } from 'react'
@@ -146,7 +146,9 @@ const [name, setName] = useState('Joe')
 setName('Michael')
 ```
 
-- example
+---
+
+**Example**
 
 ```jsx
 import React, { useState } from 'react'
@@ -170,7 +172,9 @@ function MyComponent(props) {
 - for life cycle based state and data management
 - `componentDidMount + componentDidUpdate + componentWillUnmount` => **useEffect()**
 
-- syntax
+**How to use?**
+
+- default
 
 ```jsx
 /**
@@ -184,28 +188,41 @@ function lifeCycleFunction() {
       // statement goes here
     })
     .catch(err => err)
-
-  /**
-   * @decription
-   * cleanup function,
-   * this will be triggered only when componentWillUnmount()
-   */
-  return () => {}
 }
 
 /**
- * @description
+ * @type0
  * lifeCycleFunction -> this function will be triggered automatically
  * when componentDidMount() + componentDidUpdate() life cycle methods happens
- * [] -> used to use the life cycle methods only for componentDidMount + componentWillUnmount - only once
- * not for componentDidUpdate()
- * Also, can be used to skip the componentDidUpdate() when the value are same
- * for example: useEffect(lifeCycleFunction, [1]) -> 1 === 1
  */
-useEffect(lifeCycleFunction, [])
+useEffect(lifeCycleFunction)
 ```
 
-- example
+- when only required to run for two life cycles **compoundDidMount** and **componentWillUnMount**
+
+```jsx
+/**
+ * @type1
+ * [] -> used to use the life cycle methods only for componentDidMount + componentWillUnmount - only once
+ */
+useEffect(() => {}, [])
+```
+
+- when you want to skip running the life cycle update for same value
+
+```jsx
+/**
+ * @type2
+ * name === 'joe' -> useEffect won't trigger any life cycle
+ * only works for different name
+ */
+const [name, setName] = useState('joe')
+useEffect(() => {}, [name])
+```
+
+---
+
+**Example**
 
 ```jsx
 import React, { useState, useEffect } from 'react'
