@@ -9,21 +9,26 @@
 
 - **componentDidMount()**
 
+  - called immediately when the component when is `mounted` / after `render()`
+  - **flow:** after render() -> componentDidMount()
+  - **arguments**: `NONE`
+  - called one once
+
+* **componentDidUpdate(prevProps, prevState, snapshot)**
+
+  - called when the updates occurs
+  - **flow:** when state updated() -> render() -> componentDidUpdate()
+  - **arguments**: `prevProps, prevState, snapshot`
+
+* **componentWillUnmount()**
+
   - called
 
-- **componentDidUpdate()**
+* **shouldComponentUpdate()**
 
   - called
 
-- **componentWillUnmount()**
-
-  - called
-
-- **shouldComponentUpdate()**
-
-  - called
-
-- **componentDidCatch()**
+* **componentDidCatch()**
 
   - called
 
