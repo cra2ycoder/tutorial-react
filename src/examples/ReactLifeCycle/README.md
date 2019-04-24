@@ -9,14 +9,14 @@
 
 - **componentDidMount()**
 
-  - **flow:** after render() -> componentDidMount()
+  - **flow:** `render()` -> `componentDidMount()`
   - **arguments:** `NONE`
   - **call-count:** 1
 
 * **componentDidUpdate(prevProps, prevState, snapshot)**
 
-  - **flow:** when state updated() -> render() -> componentDidUpdate()
-  - **arguments**: `prevProps, prevState, snapshot`
+  - **flow:** `each state update` -> `render()` -> `componentDidUpdate()`
+  - **arguments**: `prevProps`, `prevState`, `snapshot`
   - **call-count:** based on the updates
 
 * **componentWillUnmount()**
