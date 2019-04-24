@@ -289,7 +289,9 @@ const currentContext = useContext(MyContext);
 <div>{currentContext.name}</div>
 <div>{currentContext.age}</div>
 ```
+
 ---
+
 **Example**
 
 ```jsx
