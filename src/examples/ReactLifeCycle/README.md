@@ -9,14 +9,12 @@
 
 - **componentDidMount()**
 
-  - called immediately when the component when is `mounted` / after `render()`
   - **flow:** after render() -> componentDidMount()
   - **arguments:** `NONE`
   - **call-count:** 1
 
 * **componentDidUpdate(prevProps, prevState, snapshot)**
 
-  - called when the updates occurs
   - **flow:** when state updated() -> render() -> componentDidUpdate()
   - **arguments**: `prevProps, prevState, snapshot`
   - **call-count:** based on the updates
