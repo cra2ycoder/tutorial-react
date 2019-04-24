@@ -50,6 +50,9 @@ const themeProps = { theme: 'black' }
 ## How to use?
 
 - declare the context object first
+```jsx
+const MyContext = createContext({})
+```
 - **createContext()** will return the set of properties but we are going to use mainly two objects
 
   - **Provider**
@@ -60,9 +63,7 @@ const themeProps = { theme: 'black' }
 
     - required to use in the children components
 
-```jsx
-const MyContext = createContext({})
-```
+
 
 - using **Provider**
 
