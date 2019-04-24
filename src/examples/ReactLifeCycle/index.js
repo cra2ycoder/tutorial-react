@@ -46,10 +46,10 @@ class ReactLifeCycle extends React.Component {
   //     return {}
   //   }
 
-  static getDerivedStateFromError(error) {
-    console.log('getDerivedStateFromError')
-    console.log(error)
-  }
+  //   static getDerivedStateFromError(error) {
+  //     console.log('getDerivedStateFromError')
+  //     console.log(error)
+  //   }
 
   componentDidMount() {
     console.log('componentDidMount')
@@ -79,32 +79,4 @@ class ReactLifeCycle extends React.Component {
   }
 }
 
-// class TestLifeCycle extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       doRemove: false,
-//     }
-//   }
-//   handleButton = () => {
-//     this.setState({
-//       doRemove: !this.state.doRemove,
-//     })
-//   }
-//   render() {
-//     const { doRemove } = this.state
-//     return (
-//       <>
-//         {doRemove ? '' : <ReactLifeCycle />}
-//         <button onClick={this.handleUpdateState}>Remove Component</button>
-//       </>
-//     )
-//   }
-// }
-
-ReactDOM.render(
-  <>
-    <ReactLifeCycle />
-  </>,
-  document.getElementById('react-life-cycle')
-)
+ReactDOM.render(<ReactLifeCycle />, document.getElementById('react-life-cycle'))
