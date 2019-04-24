@@ -50,9 +50,11 @@ const themeProps = { theme: 'black' }
 ## How to use?
 
 - declare the context object first
+
 ```jsx
 const MyContext = createContext({})
 ```
+
 - **createContext()** will return the set of properties but we are going to use mainly two objects
 
   - **Provider**
@@ -63,13 +65,12 @@ const MyContext = createContext({})
 
     - required to use in the children components
 
-
-
 - using **Provider**
 
   - type 1
 
   ```jsx
+  const props = { theme: 'black' }
   <MyContext.Provider value={props}>
     // children components will be added here
   </MyContext.Provider>
@@ -79,9 +80,37 @@ const MyContext = createContext({})
 
   ```jsx
   const { Provider } = MyContext
+  const props = { theme: 'black' }
   <Provider value={props}>
     // children components will be added here
   </Provider>
+  ```
+
+- using **Consumer**
+
+  - type 1
+
+  ```jsx
+  <MyContext.Consumer>
+    {props => {
+      const { theme } = props
+      // add additional statements
+      return <div>{theme}</div>
+    }}
+  </MyContext.Consumer>
+  ```
+
+  - type 2
+
+  ```jsx
+  const { Consumer } = MyContext
+  <Consumer>
+    {props => {
+      const { theme } = props
+      // add additional statements
+      return <div>{theme}</div>
+    }}
+  </Consumer>
   ```
 
 ---
