@@ -7,39 +7,39 @@
 
 ## Legacy
 
-**componentDidMount()**
+- **componentDidMount()**
 
-- called
+  - called
 
-**componentDidUpdate()**
+- **componentDidUpdate()**
 
-- called
+  - called
 
-**componentWillUnmount()**
+- **componentWillUnmount()**
 
-- called
+  - called
 
-**shouldComponentUpdate()**
+- **shouldComponentUpdate()**
 
-- called
+  - called
 
-**componentDidCatch()**
+- **componentDidCatch()**
 
-- called
+  - called
 
 ## Deprecated/UNSAFE
 
-**UNSAFE_componentWillMount()**
+- **UNSAFE_componentWillMount()**
 
-- it was `componentWillMount()`
+  - it was `componentWillMount()`
 
-**UNSAFE_componentWillReceiveProps()**
+- **UNSAFE_componentWillReceiveProps()**
 
-- it was `componentWillReceiveProps()`
+  - it was `componentWillReceiveProps()`
 
-**UNSAFE_componentWillUpdate()**
+- **UNSAFE_componentWillUpdate()**
 
-- it was `componentWillUpdate()`
+  - it was `componentWillUpdate()`
 
 **NOTE**
 
@@ -52,23 +52,23 @@
 
 ## NEW
 
-**getDerivedStateFromProps()**
+- **getDerivedStateFromProps()**
 
-- called before `render` and `re-render`
-- together with `componentDidUpdate`
-- covers all use cases of `componentWillReceiveProps()`
-- returns an object
-- add significant complexity to components
-- often leads to bugs
-- https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+  - called before `render` and `re-render`
+  - together with `componentDidUpdate`
+  - covers all use cases of `componentWillReceiveProps()`
+  - returns an object
+  - add significant complexity to components
+  - often leads to bugs
+  - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
 
-**getSnapshotBeforeUpdate()**
+- **getSnapshotBeforeUpdate()**
 
-- called before the `DOM` get updated
-- together with `componentDidUpdate`
-- covers all use cases of `componentWillUpdate()`
-- returns a value as a third argument to the `componentDidUpdate`
-- is not often needed
+  - called before the `DOM` get updated
+  - together with `componentDidUpdate`
+  - covers all use cases of `componentWillUpdate()`
+  - returns a value as a third argument to the `componentDidUpdate`
+  - is not often needed
 
 ---
 
