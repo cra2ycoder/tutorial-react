@@ -97,6 +97,7 @@
     - `nextState`: next class state object
 
   - **call-count:** based on the new props/state update
+
   - must be returned `true/false`
     - `true`: allows component to call `render()`
     - `false`: disallow component to call `render()`
@@ -112,13 +113,23 @@
     - `error`: error message
     - `info`: the object which has the details about the component threw the error.
 
-  - **call-count:** when error occurs
+  - **call-count:** based on the error occurs
 
 ---
 
 - `[new]` **getDerivedStateFromProps(props, state)**
 
-  - called before `render` and `re-render`
+  - **flow:** `before render() / re-render()` ➡ `getDerivedStateFromProps()`
+
+  - **arguments**:
+
+    - `props`: class properties
+    - `state`: class state
+
+  - **call-count:** based on the render()
+
+  - its a `static` function so `static` must be added
+  - must be `returned` object to update the `state`
   - together with `componentDidUpdate`
   - covers all use cases of `componentWillReceiveProps()`
   - returns an object
@@ -130,6 +141,15 @@
 
 - `[new]` **getSnapshotBeforeUpdate(prevProps, prevState)**
 
+  - **flow:** `after state update/dom update` ➡ `getDerivedStateFromProps()`
+
+  - **arguments**:
+
+    - `prevProps`: previous class properties
+    - `prevState`: previous class state
+
+  - **call-count:** based on the state update
+
   - called before the `DOM` get updated
   - together with `componentDidUpdate`
   - covers all use cases of `componentWillUpdate()`
@@ -138,7 +158,19 @@
 
 ---
 
-- `[new]` **getDerivedStateFromError()**
+- `[new]` **getDerivedStateFromError(error)**
+
+  - **flow:** `error from descendant component` ➡ `getDerivedStateFromError()`
+
+  - **arguments**:
+
+    - `error`: error message
+
+  - **call-count:** based on the error
+
+  - its a `static` function so `static` must be added
+  - must be `returned` object to update the `state`
+  - better use `componentDidCatch()` instead
 
 ---
 

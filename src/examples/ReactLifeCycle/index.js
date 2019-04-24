@@ -25,11 +25,30 @@ class ReactLifeCycle extends React.Component {
   //     console.log('UNSAFE_componentWillUpdate')
   //   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate')
-    console.log(nextProps)
-    console.log(nextState)
-    return true
+  //   shouldComponentUpdate(nextProps, nextState) {
+  //     console.log('shouldComponentUpdate')
+  //     console.log(nextProps)
+  //     console.log(nextState)
+  //     return true
+  //   }
+
+  //   static getDerivedStateFromProps(props, state) {
+  //     console.log('getDerivedStateFromProps')
+  //     console.log(props)
+  //     console.log(state)
+  //     return {}
+  //   }
+
+  //   getSnapshotBeforeUpdate(prevProps, prevState) {
+  //     console.log('getSnapshotBeforeUpdate')
+  //     console.log(prevProps)
+  //     console.log(prevState)
+  //     return {}
+  //   }
+
+  static getDerivedStateFromError(error) {
+    console.log('getDerivedStateFromError')
+    console.log(error)
   }
 
   componentDidMount() {
