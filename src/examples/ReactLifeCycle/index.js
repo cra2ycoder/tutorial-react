@@ -17,8 +17,19 @@ class ReactLifeCycle extends React.Component {
   //     console.log('UNSAFE_componentWillMount')
   //   }
 
-  UNSAFE_componentWillReceiveProps() {
-    console.log('UNSAFE_componentWillReceiveProps')
+  //   UNSAFE_componentWillReceiveProps() {
+  //     console.log('UNSAFE_componentWillReceiveProps')
+  //   }
+
+  //   UNSAFE_componentWillUpdate(nextProps, nextState) {
+  //     console.log('UNSAFE_componentWillUpdate')
+  //   }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate')
+    console.log(nextProps)
+    console.log(nextState)
+    return true
   }
 
   componentDidMount() {
@@ -75,7 +86,6 @@ class ReactLifeCycle extends React.Component {
 ReactDOM.render(
   <>
     <ReactLifeCycle />
-    <ReactLifeCycle a={10} />
   </>,
   document.getElementById('react-life-cycle')
 )

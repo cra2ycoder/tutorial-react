@@ -74,15 +74,26 @@
 
 ## Rarely Used Life cycle Methods
 
-- **shouldComponentUpdate()**
+- **shouldComponentUpdate(nextProps, nextState)**
+
+  - **flow:**
+    `after state update` ➡ `shouldComponentUpdate()` ➡ `if return true` ➡ `render()`
+    `after state update` ➡ `shouldComponentUpdate()` ➡ `if return false`
+  - **arguments**:
+
+    - `nextProps`: next class properties
+    - `nextState`: next class state object
+
+  - **call-count:** based on the new props/state update
+  - must be returned `true/false`
+    - `true`: allows component to call `render()`
+    - `false`: disallow component to call `render()`
+
+* **componentDidCatch()**
 
   - called
 
-- **componentDidCatch()**
-
-  - called
-
-- `[new]` **getDerivedStateFromProps()**
+* `[new]` **getDerivedStateFromProps()**
 
   - called before `render` and `re-render`
   - together with `componentDidUpdate`
@@ -92,7 +103,7 @@
   - often leads to bugs
   - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
 
-- `[new]` **getSnapshotBeforeUpdate()**
+* `[new]` **getSnapshotBeforeUpdate()**
 
   - called before the `DOM` get updated
   - together with `componentDidUpdate`
@@ -100,7 +111,7 @@
   - returns a value as a third argument to the `componentDidUpdate`
   - is not often needed
 
-- `[new]` **getDerivedStateFromError()**
+* `[new]` **getDerivedStateFromError()**
 
 ---
 
