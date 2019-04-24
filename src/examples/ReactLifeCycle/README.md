@@ -13,7 +13,9 @@
   - **arguments:** `NONE`
   - **call-count:** 1
 
-* **componentDidUpdate(prevProps, prevState, snapshot)**
+---
+
+- **componentDidUpdate(prevProps, prevState, snapshot)**
 
   - **flow:** `each state update` ➡ `render()` ➡ `componentDidUpdate()`
   - **arguments**:
@@ -24,7 +26,9 @@
 
   - **call-count:** based on the updates
 
-* **componentWillUnmount()**
+---
+
+- **componentWillUnmount()**
 
   - **flow:** `before unmount/destroy` ➡ `componentWillUnmount()`
   - **arguments:** `NONE`
@@ -43,12 +47,16 @@
   - it was `componentWillMount()`
   - better to use class `constructor` instead of this
 
+---
+
 - **UNSAFE_componentWillReceiveProps()**
 
   - **flow:** `before receive new props` ➡ `UNSAFE_componentWillReceiveProps()`
   - **arguments:** `NONE`
   - **call-count:** based on the new props receiving
   - it was `componentWillReceiveProps()`
+
+---
 
 - **UNSAFE_componentWillUpdate(nextProps, nextState)**
 
@@ -62,6 +70,8 @@
   - **call-count:** based on the new props update
 
   - it was `componentWillUpdate()`
+
+---
 
 **NOTE**
 
@@ -91,7 +101,9 @@
     - `true`: allows component to call `render()`
     - `false`: disallow component to call `render()`
 
-* **componentDidCatch(error, info)**
+---
+
+- **componentDidCatch(error, info)**
 
   - **flow:** `error from descendant component` ➡ `componentDidCatch()`
 
@@ -102,7 +114,9 @@
 
   - **call-count:** when error occurs
 
-* `[new]` **getDerivedStateFromProps()**
+---
+
+- `[new]` **getDerivedStateFromProps(props, state)**
 
   - called before `render` and `re-render`
   - together with `componentDidUpdate`
@@ -112,7 +126,9 @@
   - often leads to bugs
   - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
 
-* `[new]` **getSnapshotBeforeUpdate()**
+---
+
+- `[new]` **getSnapshotBeforeUpdate(prevProps, prevState)**
 
   - called before the `DOM` get updated
   - together with `componentDidUpdate`
@@ -120,7 +136,9 @@
   - returns a value as a third argument to the `componentDidUpdate`
   - is not often needed
 
-* `[new]` **getDerivedStateFromError()**
+---
+
+- `[new]` **getDerivedStateFromError()**
 
 ---
 
