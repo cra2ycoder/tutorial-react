@@ -9,6 +9,10 @@ class ReactLifeCycle extends React.Component {
     }
   }
 
+  static defaultProps = {
+    name: 'react life cycle',
+  }
+
   componentDidMount() {
     console.log('componentDidMount')
   }

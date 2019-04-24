@@ -16,7 +16,12 @@
 * **componentDidUpdate(prevProps, prevState, snapshot)**
 
   - **flow:** `each state update` ➡ `render()` ➡ `componentDidUpdate()`
-  - **arguments**: `prevProps`, `prevState`, `snapshot`
+  - **arguments**:
+
+    - `prevProps`: previous class properties
+    - `prevState`: previous class state object
+    - `snapshot`: the value which returned by `getSnapshotBeforeUpdate()`
+
   - **call-count:** based on the updates
 
 * **componentWillUnmount()**
