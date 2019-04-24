@@ -15,7 +15,7 @@
 
 * **componentDidUpdate(prevProps, prevState, snapshot)**
 
-  - **flow:** `each state update` -> `render()` -> `componentDidUpdate()`
+  - **flow:** `each state update` ➡ `render()` ➡ `componentDidUpdate()`
   - **arguments**: `prevProps`, `prevState`, `snapshot`
   - **call-count:** based on the updates
 
