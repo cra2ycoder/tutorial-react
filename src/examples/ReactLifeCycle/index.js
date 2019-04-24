@@ -13,6 +13,14 @@ class ReactLifeCycle extends React.Component {
     name: 'react life cycle',
   }
 
+  //   UNSAFE_componentWillMount() {
+  //     console.log('UNSAFE_componentWillMount')
+  //   }
+
+  UNSAFE_componentWillReceiveProps() {
+    console.log('UNSAFE_componentWillReceiveProps')
+  }
+
   componentDidMount() {
     console.log('componentDidMount')
   }
@@ -64,4 +72,10 @@ class ReactLifeCycle extends React.Component {
 //   }
 // }
 
-ReactDOM.render(<ReactLifeCycle />, document.getElementById('react-life-cycle'))
+ReactDOM.render(
+  <>
+    <ReactLifeCycle />
+    <ReactLifeCycle a={10} />
+  </>,
+  document.getElementById('react-life-cycle')
+)

@@ -32,15 +32,34 @@
 
 ## Deprecated/UNSAFE
 
+- these are legacy methods only
+- but react not recommending to use in the new code
+
 - **UNSAFE_componentWillMount()**
 
+  - **flow:** `before mount/render()` ➡ `UNSAFE_componentWillMount()`
+  - **arguments:** `NONE`
+  - **call-count:** 1
   - it was `componentWillMount()`
+  - better to use class `constructor` instead of this
 
 - **UNSAFE_componentWillReceiveProps()**
 
+  - **flow:** `before receive new props` ➡ `UNSAFE_componentWillReceiveProps()`
+  - **arguments:** `NONE`
+  - **call-count:** based on the new props receiving
   - it was `componentWillReceiveProps()`
 
-- **UNSAFE_componentWillUpdate()**
+- **UNSAFE_componentWillUpdate(nextProps, nextState)**
+
+  - **flow:**
+    `before receive new props` ➡ `before render()` ➡ `UNSAFE_componentWillUpdate()`
+  - **arguments**:
+
+    - `nextProps`: next class properties
+    - `nextState`: next class state object
+
+  - **call-count:** based on the new props update
 
   - it was `componentWillUpdate()`
 
