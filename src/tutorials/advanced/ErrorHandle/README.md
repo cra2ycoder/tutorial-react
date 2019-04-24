@@ -27,10 +27,32 @@
   - `static getDerivedStateFromError()`
 
     - used to render UI, for error indication after error thrown
+    - we can use this one as optional
+
+    ```jsx
+    static getDerivedStateFromError(error) {
+        // this object is return to state object for update
+        // so make sure on the state merge
+        return { error: true }
+    }
+    ```
 
   - `componentDidCatch()`
 
     - catch and log the errors
+
+    ```jsx
+    componentDidCatch(error, errorInfo) {
+        this.setState({
+            error,
+            errorInfo,
+        })
+    }
+    ```
+
+## lifecycle
+
+- `getDerivedStateFromError()` ➡ `set error in the state object` ➡ `componentDidCatch()` ➡ `get the error info`
 
 ## Where Error Boundary does not work?
 
@@ -38,5 +60,3 @@
 - `setTimeout` or `requestAnimationFrame` callbacks.
 - Server side rendering (SSR)
 - Errors thrown in the error boundary itself, rather than in its children.
-
-## Usage
