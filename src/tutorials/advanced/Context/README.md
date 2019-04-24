@@ -122,6 +122,60 @@ const { Consumer } = MyContext
 
 ## Class.contextType
 
+```jsx
+const ClassContextObject = createContext({
+  theme: 'black',
+})
+
+const ClassChildren = () => {
+  return (
+    <ClassContextObject.Consumer>
+      {props => {
+        console.log('ClassChildren ----->')
+        console.log(props)
+        return <div>test</div>
+      }}
+    </ClassContextObject.Consumer>
+  )
+}
+```
+
+- type 1
+
+```jsx
+class ClassContext extends React.Component {
+  componentWillMount() {
+    console.log('componentWillMount ----->')
+    console.log(this.context)
+  }
+  componentDidMount() {
+    console.log('componentDidMount ----->')
+    console.log(this.context)
+  }
+  render() {
+    console.log('render ----->')
+    console.log(this.context)
+    return <ClassChildren />
+  }
+}
+
+// assigning the context with class
+ClassContext.contextType = ClassContextObject
+```
+
+- type 2
+
+```jsx
+class ClassContext extends React.Component {
+  static contextType = ClassContextObject
+  render() {
+    console.log('ClassContextType2 ---->')
+    console.log(this.context)
+    return <ClassChildren />
+  }
+}
+```
+
 ---
 
 ## Free JSON API Placeholder
