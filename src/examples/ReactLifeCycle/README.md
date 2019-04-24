@@ -77,8 +77,10 @@
 - **shouldComponentUpdate(nextProps, nextState)**
 
   - **flow:**
-    `after state update` ➡ `shouldComponentUpdate()` ➡ `if return true` ➡ `render()`
-    `after state update` ➡ `shouldComponentUpdate()` ➡ `if return false`
+
+    - `after state update` ➡ `shouldComponentUpdate()` ➡ `if return true` ➡ `render()`
+    - `after state update` ➡ `shouldComponentUpdate()` ➡ `if return false`
+
   - **arguments**:
 
     - `nextProps`: next class properties
