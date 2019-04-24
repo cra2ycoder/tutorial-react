@@ -20,11 +20,14 @@ const themeName = 'black'
 - see the below example how this works in `Context`
 
 ```jsx
-
+// declaring the context
 const ThemeContext = createContext({})
 
-// consider that ChildrenA, ChildrenB and ChildrenC
-// have the below code in the return
+/**
+ * @description
+ * consider that ChildrenA, ChildrenB and ChildrenC
+ * have the below code in the return
+ * */
 <ThemeContext.Consumer>
   {props => {
     const { theme } = props
@@ -32,7 +35,10 @@ const ThemeContext = createContext({})
   }}
 </ThemeContext.Consumer>
 
-// parent (main) component
+/**
+ * @description
+ * parent (main) component
+ * */
 const themeProps = { theme: 'black' }
 <ThemeContext.Provider value={themeProps}>
   <ChildrenA />
