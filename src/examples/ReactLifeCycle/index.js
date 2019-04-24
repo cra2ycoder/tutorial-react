@@ -33,8 +33,35 @@ class ReactLifeCycle extends React.Component {
 
   render() {
     console.log('render()')
-    return <button onClick={this.handleUpdateState}>Update State</button>
+    return (
+      <>
+        <button onClick={this.handleUpdateState}>Update State</button>
+      </>
+    )
   }
 }
+
+// class TestLifeCycle extends React.Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       doRemove: false,
+//     }
+//   }
+//   handleButton = () => {
+//     this.setState({
+//       doRemove: !this.state.doRemove,
+//     })
+//   }
+//   render() {
+//     const { doRemove } = this.state
+//     return (
+//       <>
+//         {doRemove ? '' : <ReactLifeCycle />}
+//         <button onClick={this.handleUpdateState}>Remove Component</button>
+//       </>
+//     )
+//   }
+// }
 
 ReactDOM.render(<ReactLifeCycle />, document.getElementById('react-life-cycle'))

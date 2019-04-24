@@ -26,15 +26,9 @@
 
 * **componentWillUnmount()**
 
-  - called
-
-* **shouldComponentUpdate()**
-
-  - called
-
-* **componentDidCatch()**
-
-  - called
+  - **flow:** `before unmount/destroy` ➡ `componentWillUnmount()`
+  - **arguments:** `NONE`
+  - **call-count:** 1
 
 ## Deprecated/UNSAFE
 
@@ -59,9 +53,17 @@
   - removed: `componentWillMount()`, `componentWillReceiveProps()` and `componentWillUpdate()`
   - remains: `UNSAFE_componentWillMount()`, `UNSAFE_componentWillReceiveProps()` and `UNSAFE_componentWillUpdate()`
 
-## NEW
+## Rarely Used Life cycle Methods
 
-- **getDerivedStateFromProps()**
+- **shouldComponentUpdate()**
+
+  - called
+
+- **componentDidCatch()**
+
+  - called
+
+- `[new]` **getDerivedStateFromProps()**
 
   - called before `render` and `re-render`
   - together with `componentDidUpdate`
@@ -71,13 +73,15 @@
   - often leads to bugs
   - https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
 
-- **getSnapshotBeforeUpdate()**
+- `[new]` **getSnapshotBeforeUpdate()**
 
   - called before the `DOM` get updated
   - together with `componentDidUpdate`
   - covers all use cases of `componentWillUpdate()`
   - returns a value as a third argument to the `componentDidUpdate`
   - is not often needed
+
+- `[new]` **getDerivedStateFromError()**
 
 ---
 
