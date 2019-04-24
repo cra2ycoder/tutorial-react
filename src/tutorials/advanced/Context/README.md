@@ -54,7 +54,7 @@ const themeProps = { theme: 'black' }
 </ThemeContext.Provider>
 ```
 
-## How to use?
+## React.createContext()
 
 - declare the context object first
 
@@ -72,53 +72,55 @@ const MyContext = createContext({})
 
     - required to use in the children components
 
-- using **Provider**
+## Context.Provider
 
-  - type 1
+- type 1
 
-  ```jsx
-  const props = { theme: 'black' }
-  <MyContext.Provider value={props}>
-    // children components will be added here
-  </MyContext.Provider>
-  ```
+```jsx
+const props = { theme: 'black' }
+<MyContext.Provider value={props}>
+  // children components will be added here
+</MyContext.Provider>
+```
 
-  - type 2
+- type 2
 
-  ```jsx
-  const { Provider } = MyContext
-  const props = { theme: 'black' }
-  <Provider value={props}>
-    // children components will be added here
-  </Provider>
-  ```
+```jsx
+const { Provider } = MyContext
+const props = { theme: 'black' }
+<Provider value={props}>
+  // children components will be added here
+</Provider>
+```
 
-- using **Consumer**
+## Context.Consumer
 
-  - type 1
+- type 1
 
-  ```jsx
-  <MyContext.Consumer>
-    {props => {
-      const { theme } = props
-      // add additional statements
-      return <div>{theme}</div>
-    }}
-  </MyContext.Consumer>
-  ```
+```jsx
+<MyContext.Consumer>
+  {props => {
+    const { theme } = props
+    // add additional statements
+    return <div>{theme}</div>
+  }}
+</MyContext.Consumer>
+```
 
-  - type 2
+- type 2
 
-  ```jsx
-  const { Consumer } = MyContext
-  <Consumer>
-    {props => {
-      const { theme } = props
-      // add additional statements
-      return <div>{theme}</div>
-    }}
-  </Consumer>
-  ```
+```jsx
+const { Consumer } = MyContext
+<Consumer>
+  {props => {
+    const { theme } = props
+    // add additional statements
+    return <div>{theme}</div>
+  }}
+</Consumer>
+```
+
+## Class.contextType
 
 ---
 
