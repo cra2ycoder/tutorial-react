@@ -2,6 +2,13 @@
 
 - provides a way to **pass data** through the **component tree**
 
+## Core Pieces
+
+- [React.createContext()](https://reactjs.org/docs/context.html#reactcreatecontext)
+- [Context.Provider](https://reactjs.org/docs/context.html#contextprovider)
+- [Context.Consumer](https://reactjs.org/docs/context.html#contextconsumer)
+- [Class.contextType](https://reactjs.org/docs/context.html#classcontexttype)
+
 ## When to use Context?
 
 - when require to share same property to all or some of the children from the main(parent) component
