@@ -190,6 +190,11 @@ class ClassContext extends React.Component {
 
 ---
 
+## Notes
+
+- We can use **Multiple provider** in one component
+- We can use **Multiple consumer** in one component
+
 ## Free JSON API Placeholder
 
 https://jsonplaceholder.typicode.com/
