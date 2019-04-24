@@ -91,9 +91,16 @@
     - `true`: allows component to call `render()`
     - `false`: disallow component to call `render()`
 
-* **componentDidCatch()**
+* **componentDidCatch(error, info)**
 
-  - called
+  - **flow:** `error from descendant component` ➡ `componentDidCatch()`
+
+  - **arguments**:
+
+    - `error`: error message
+    - `info`: the object which has the details about the component threw the error.
+
+  - **call-count:** when error occurs
 
 * `[new]` **getDerivedStateFromProps()**
 
