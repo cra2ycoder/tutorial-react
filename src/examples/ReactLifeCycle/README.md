@@ -9,7 +9,7 @@
 
 - **componentDidMount()**
 
-  - **flow:** `render()` -> `componentDidMount()`
+  - **flow:** `render()` ➡ `componentDidMount()`
   - **arguments:** `NONE`
   - **call-count:** 1
 
