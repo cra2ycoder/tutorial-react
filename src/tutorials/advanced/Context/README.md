@@ -122,6 +122,10 @@ const { Consumer } = MyContext
 
 ## Class.contextType
 
+- **NO NEED** to add provider
+- we can the read the context by using `this.context`
+- to read the property `this.context.[propName]`
+
 ```jsx
 const ClassContextObject = createContext({
   theme: 'black',
@@ -131,7 +135,6 @@ const ClassChildren = () => {
   return (
     <ClassContextObject.Consumer>
       {props => {
-        console.log('ClassChildren ----->')
         console.log(props)
         return <div>test</div>
       }}
@@ -145,15 +148,12 @@ const ClassChildren = () => {
 ```jsx
 class ClassContext extends React.Component {
   componentWillMount() {
-    console.log('componentWillMount ----->')
     console.log(this.context)
   }
   componentDidMount() {
-    console.log('componentDidMount ----->')
     console.log(this.context)
   }
   render() {
-    console.log('render ----->')
     console.log(this.context)
     return <ClassChildren />
   }
@@ -169,7 +169,6 @@ ClassContext.contextType = ClassContextObject
 class ClassContext extends React.Component {
   static contextType = ClassContextObject
   render() {
-    console.log('ClassContextType2 ---->')
     console.log(this.context)
     return <ClassChildren />
   }
