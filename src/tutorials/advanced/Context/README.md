@@ -122,7 +122,20 @@ const { Consumer } = MyContext
 
 ## Class.contextType
 
-- **NO NEED** to add provider
+- **NO NEED** to add provider instead
+
+  - outside of the class
+
+  ```jsx
+  Class.contextType = Context
+  ```
+
+  - inside of the class
+
+  ```jsx
+  static contextType = Context
+  ```
+
 - we can the read the context by using `this.context`
 - to read the property `this.context.[propName]`
 
