@@ -27,3 +27,27 @@ const CollectionComponent = {
 // correct
 <MyComponent url="https://via.placeholder.com/150" />
 ```
+
+## Dynamic Rendering Component
+
+```jsx
+const Header = props => <h1>Header</h1>
+const Paragraph = props => <p>This is paragraph!</p>
+const Image = props => <img src={props.url} />
+
+function DynamicRenderComponent(props) {
+  const { type, ...remainingProps } = props
+  const components = {
+    header: Header,
+    paragraph: Paragraph,
+    image: Image,
+  }
+  const Component = components[type]
+  return <Component {...remainingProps} />
+}
+
+// usage
+<DynamicRenderComponent type="image" url="https://via.placeholder.com/75" />
+<DynamicRenderComponent type="header" />
+<DynamicRenderComponent type="paragraph" />
+```
