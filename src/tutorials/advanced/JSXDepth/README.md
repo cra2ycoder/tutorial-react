@@ -77,12 +77,13 @@ function DynamicRenderWithImport(props) {
 ## Empty Results
 
 ```jsx
+// input
 <div />
 <div>{false}</div>
 <div>{null}</div>
 <div>{undefined}</div>
 <div>{true}</div>
 
-// output for the above use above will be
+// output for the above all will be
 <div></div>
 ```
