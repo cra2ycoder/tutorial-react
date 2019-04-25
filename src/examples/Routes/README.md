@@ -86,3 +86,7 @@ class Routes extends React.Component {
 ## Reference Links
 
 - https://reacttraining.com/react-router/web/api
+
+## Example
+
+![](https://cra2ycoder.sirv.com/tutorial-react/routes.gif)
