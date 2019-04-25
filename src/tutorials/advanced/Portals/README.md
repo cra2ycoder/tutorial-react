@@ -24,4 +24,4 @@ ReactDOM.createPortal(<Modal />, document.body)
 
 ## example
 
-- ![](https://cdn-images-1.medium.com/max/1600/1*WPBrzCW80is_tZ08DSQAag.gif)
+![](https://cdn-images-1.medium.com/max/1600/1*WPBrzCW80is_tZ08DSQAag.gif)
