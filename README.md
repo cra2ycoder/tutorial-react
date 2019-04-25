@@ -45,6 +45,7 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - [JSX Depth](https://reactjs.org/docs/jsx-in-depth.html)
   - [Portals](https://reactjs.org/docs/portals.html)
   - [React Without ES6](https://reactjs.org/docs/react-without-es6.html)
+  - [Ref and DOM](https://reactjs.org/docs/refs-and-the-dom.html)
 
 - **Hooks** (see: src/hooks)
 
