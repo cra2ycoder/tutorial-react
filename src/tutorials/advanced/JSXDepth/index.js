@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import * as ComponentsLibrary from './Components'
 
 /**
  * @description
@@ -31,6 +32,10 @@ const Header = props => <h1>Header</h1>
 const Paragraph = props => <p>This is paragraph!</p>
 const Image = props => <img src={props.url} />
 
+/**
+ * @description
+ * @type1
+ */
 function DynamicRenderComponent(props) {
   const { type, ...remainingProps } = props
   const components = {
@@ -39,6 +44,16 @@ function DynamicRenderComponent(props) {
     image: Image,
   }
   const Component = components[type]
+  return <Component {...remainingProps} />
+}
+
+/**
+ * @description
+ * @type2
+ */
+function DynamicRenderWithImport(props) {
+  const { type, ...remainingProps } = props
+  const Component = ComponentsLibrary[type]
   return <Component {...remainingProps} />
 }
 
@@ -51,6 +66,12 @@ ReactDOM.render(
     <DynamicRenderComponent type="header" />
     <DynamicRenderComponent type="paragraph" />
     <hr />
+    <DynamicRenderWithImport
+      type="Image"
+      url="https://via.placeholder.com/75"
+    />
+    <DynamicRenderWithImport type="Header" />
+    <DynamicRenderWithImport type="Paragraph" />
   </>,
   document.getElementById('jsx-depth')
 )

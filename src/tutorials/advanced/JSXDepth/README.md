@@ -30,6 +30,8 @@ const CollectionComponent = {
 
 ## Dynamic Rendering Component
 
+- type 1
+
 ```jsx
 const Header = props => <h1>Header</h1>
 const Paragraph = props => <p>This is paragraph!</p>
@@ -50,4 +52,24 @@ function DynamicRenderComponent(props) {
 <DynamicRenderComponent type="image" url="https://via.placeholder.com/75" />
 <DynamicRenderComponent type="header" />
 <DynamicRenderComponent type="paragraph" />
+```
+
+- type 2
+
+```jsx
+import * as ComponentsLibrary from './Components'
+
+function DynamicRenderWithImport(props) {
+  const { type, ...remainingProps } = props
+  const Component = ComponentsLibrary[type]
+  return <Component {...remainingProps} />
+}
+
+// usage
+<DynamicRenderWithImport
+    type="Image"
+    url="https://via.placeholder.com/75"
+/>
+<DynamicRenderWithImport type="Header" />
+<DynamicRenderWithImport type="Paragraph" />
 ```
