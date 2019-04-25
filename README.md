@@ -39,6 +39,10 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - [Accessibility](https://reactjs.org/docs/accessibility.html)
     (_dropped, will create new repo_)
   - [Code Splitting](https://reactjs.org/docs/code-splitting.html)
+  - [Context](https://reactjs.org/docs/context.html)
+  - [Error Handling](https://reactjs.org/docs/error-boundaries.html)
+  - [Fragments](https://reactjs.org/docs/fragments.html)
+  - [JSX Depth](https://reactjs.org/docs/jsx-in-depth.html)
 
 - **Hooks** (see: src/hooks)
 
