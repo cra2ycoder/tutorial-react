@@ -11,7 +11,9 @@
 </React.Fragment>
 
 // shorthand
-<></>
+<>
+    // children component/dom goes here
+</>
 ```
 
 ## example
