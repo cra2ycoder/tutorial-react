@@ -73,3 +73,16 @@ function DynamicRenderWithImport(props) {
 <DynamicRenderWithImport type="Header" />
 <DynamicRenderWithImport type="Paragraph" />
 ```
+
+## Empty Results
+
+```jsx
+<div />
+<div>{false}</div>
+<div>{null}</div>
+<div>{undefined}</div>
+<div>{true}</div>
+
+// output for the above use above will be
+<div></div>
+```

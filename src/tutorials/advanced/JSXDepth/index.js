@@ -57,6 +57,22 @@ function DynamicRenderWithImport(props) {
   return <Component {...remainingProps} />
 }
 
+/**
+ * @description
+ */
+
+function EmptyResult(props) {
+  return (
+    <>
+      <div />
+      <div>{false}</div>
+      <div>{null}</div>
+      <div>{undefined}</div>
+      <div>{true}</div>
+    </>
+  )
+}
+
 ReactDOM.render(
   <>
     <CollectionComponent.Image imageUrl="https://via.placeholder.com/150" />
@@ -72,6 +88,8 @@ ReactDOM.render(
     />
     <DynamicRenderWithImport type="Header" />
     <DynamicRenderWithImport type="Paragraph" />
+    <hr />
+    <EmptyResult />
   </>,
   document.getElementById('jsx-depth')
 )
