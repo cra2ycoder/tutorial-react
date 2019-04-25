@@ -2,18 +2,34 @@
 
 - group the set of DOM elements without extra node
 
-## usage
+## core pieces
+
+- default fragment
 
 ```jsx
 // default
-<React.Fragment>
-    // children component/dom goes here
-</React.Fragment>
+<React.Fragment>{`children component/dom goes here`}</React.Fragment>
+```
 
+- short syntax fragment
+
+```jsx
 // shorthand
-<>
-    // children component/dom goes here
-</>
+<>{`children component/dom goes here`}</>
+```
+
+- keyed fragment
+
+```jsx
+<dl>
+  {list.map(item => (
+    // Without the `key`, React will fire a key warning
+    <React.Fragment key={item.id}>
+      <dt>{item.term}</dt>
+      <dd>{item.description}</dd>
+    </React.Fragment>
+  ))}
+</dl>
 ```
 
 ## example
