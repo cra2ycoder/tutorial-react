@@ -63,3 +63,7 @@ if (this.element) {
   const value = this.element.value
 }
 ```
+
+## example
+
+![](https://cra2ycoder.sirv.com/tutorial-react/ref_example.gif)
