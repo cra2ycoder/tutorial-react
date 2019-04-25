@@ -62,7 +62,7 @@ class CallbackRef extends React.Component {
 
 ReactDOM.render(
   <>
-    
+    <CallbackRef />
     <RefExample />
   </>,
   document.getElementById('ref')
