@@ -43,6 +43,8 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - [Error Handling](https://reactjs.org/docs/error-boundaries.html)
   - [Fragments](https://reactjs.org/docs/fragments.html)
   - [JSX Depth](https://reactjs.org/docs/jsx-in-depth.html)
+  - [Portals](https://reactjs.org/docs/portals.html)
+  - [React Without ES6](https://reactjs.org/docs/react-without-es6.html)
 
 - **Hooks** (see: src/hooks)
 
