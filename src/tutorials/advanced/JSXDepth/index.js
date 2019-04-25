@@ -15,10 +15,20 @@ const CollectionComponent = {
   },
 }
 
+/**
+ * @description
+ * User-Defined Components Must Be Capitalized
+ */
+
+function image(props) {
+  return <img src={props.url} />
+}
+
 ReactDOM.render(
   <>
     <CollectionComponent.Image imageUrl="https://via.placeholder.com/150" />
     <CollectionComponent.Header content="This is Heading!" />
+    <image url="https://via.placeholder.com/150" />
   </>,
   document.getElementById('jsx-depth')
 )
