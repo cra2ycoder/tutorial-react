@@ -32,6 +32,10 @@
 </dl>
 ```
 
+## Note
+
+- any attribute cant be passed through the `short syntax` fragment
+
 ## example
 
 ```jsx
