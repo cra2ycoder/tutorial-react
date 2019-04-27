@@ -9,7 +9,7 @@ const internalMethodProps = {
   imgSrc: 'https://via.placeholder.com/100',
   desc: 'Internal Description',
   renderTitle: props => {
-    return <h2>{`i: `+ props.title}</h2>
+    return <h2>{`i: ` + props.title}</h2>
   },
   renderImage: props => {
     return <img src={props.imgSrc} />
