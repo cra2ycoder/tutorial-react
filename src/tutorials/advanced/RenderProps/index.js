@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import InternalRenderProps from './InternalRenderProps'
-import ExternalRenderProps from './ExternalRenderProps'
+import InternalRenderProps from './Internal/InternalRenderProps'
+import ExternalRenderProps from './External/ExternalRenderProps'
 import ChildrenRenderProp from './ChildrenRenderProp'
 
 const internalMethodProps = {
@@ -9,7 +9,7 @@ const internalMethodProps = {
   imgSrc: 'https://via.placeholder.com/100',
   desc: 'Internal Description',
   renderTitle: props => {
-    return <h2>{props.title}</h2>
+    return <h2>{`i: `+ props.title}</h2>
   },
   renderImage: props => {
     return <img src={props.imgSrc} />
@@ -21,8 +21,14 @@ const internalMethodProps = {
 
 ReactDOM.render(
   <>
+    <h1>Internal:</h1>
     <InternalRenderProps {...internalMethodProps} />
+    <hr />
+    <h1>External:</h1>
     <ExternalRenderProps />
+    <ExternalRenderProps renderTitle={internalMethodProps.renderTitle} />
+    <hr />
+    <h1>Using Children:</h1>
     <ChildrenRenderProp />
   </>,
   document.getElementById('render-props')
