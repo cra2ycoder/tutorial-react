@@ -7,16 +7,6 @@ class MyComponent extends React.Component {
 }
 
 class ChildrenRenderProp extends React.Component {
-  renderChildren() {
-    return (
-      <>
-        <h2>Title</h2>
-        <img src="https://via.placeholder.com/50" />
-        <p>description goes here...</p>
-      </>
-    )
-  }
-
   renderType1() {
     return (
       <MyComponent>
@@ -28,7 +18,16 @@ class ChildrenRenderProp extends React.Component {
   }
 
   renderType2() {
-    return <MyComponent>{this.renderChildren()}</MyComponent>
+    const renderChildren = () => {
+      return (
+        <>
+          <h2>Title</h2>
+          <img src="https://via.placeholder.com/50" />
+          <p>description goes here...</p>
+        </>
+      )
+    }
+    return <MyComponent>{renderChildren()}</MyComponent>
   }
 
   render() {
