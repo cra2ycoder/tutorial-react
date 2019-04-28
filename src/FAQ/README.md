@@ -4,6 +4,13 @@
 
 ---
 
+### Developer Tools for React
+
+- [Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+---
+
 ### How can I make an AJAX call?
 
 - AJAX expands `Asynchronous JavaScript and XML`
