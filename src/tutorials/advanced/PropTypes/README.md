@@ -28,3 +28,9 @@ MyComponent.propTypes = {
   age: PropTypes.number,
 }
 ```
+
+## Example
+
+- on the below example, you can see that the red lines on the props got removed in the second image after assigning the prop types to the component
+
+![](https://cra2ycoder.sirv.com/tutorial-react/proptypes.png)
