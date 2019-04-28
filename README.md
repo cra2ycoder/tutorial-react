@@ -46,6 +46,10 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
   - [Portals](https://reactjs.org/docs/portals.html)
   - [React Without ES6](https://reactjs.org/docs/react-without-es6.html)
   - [Ref and DOM](https://reactjs.org/docs/refs-and-the-dom.html)
+  - [Forwarding Refs](https://reactjs.org/docs/forwarding-refs.html)
+  - [Render Props](https://reactjs.org/docs/render-props.html)
+  - [Prop Types](https://reactjs.org/docs/typechecking-with-proptypes.html)
+  - [Without ES6](https://reactjs.org/docs/react-without-es6.html)
 
 - **Hooks** (see: src/hooks)
 
@@ -57,10 +61,6 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
   - [Filterable Product Table](https://reactjs.org/docs/thinking-in-react.html)
   - [Routes](https://reacttraining.com/react-router/web/api/BrowserRouter)
-
-- **Unable to Understand**
-
-  - [Forwarding Refs](https://reactjs.org/docs/forwarding-refs.html)
 
 * **Later**
   - [Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
