@@ -2,6 +2,8 @@
 
 - some useful FAQ for reference.
 
+---
+
 ### How can I make an AJAX call?
 
 - AJAX expands `Asynchronous JavaScript and XML`
@@ -32,6 +34,8 @@
       .catch(err => console.log(err))
     ```
 
+---
+
 ### How can I write comments in JSX?
 
 ```jsx
@@ -48,6 +52,8 @@
   Hello, {name}!
 </div>
 ```
+
+---
 
 ### How to set style?
 
@@ -99,6 +105,8 @@ function HelloWorldComponent() {
 
   - https://github.com/MicheleBertoli/css-in-js
 
+---
+
 ### What is the right way to do setState?
 
 There are two ways to update the state in React using setState.
@@ -127,6 +135,8 @@ this.setState(state => {
 
 This is the right way to update the state since we will be receiving the current state from the argument.
 
+---
+
 ### Props vs State
 
 |                                              | _props_ | _state_ |
@@ -137,6 +147,8 @@ This is the right way to update the state since we will be receiving the current
 | Can change inside Component?                 | No      | Yes     |
 | Can set initial value for child Components?  | Yes     | Yes     |
 | Can change in child Components?              | Yes     | No      |
+
+---
 
 #### Component types
 
@@ -166,6 +178,8 @@ above are the ways will lead performance implications as its creating a new func
 ```
 
 passing as reference will be always good
+
+---
 
 ### How we can prevent a function from being called multiple times?
 
@@ -211,6 +225,8 @@ To be in simple, its like setTimeout, only difference is setTimeout will be stop
 **Visual Representation:**
 
 - [DEMO](http://demo.nimius.net/debounce_throttle/)
+
+---
 
 ### Can I do animations in React?
 
