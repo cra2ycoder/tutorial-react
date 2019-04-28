@@ -61,6 +61,10 @@ git clone https://cra2ycoder@github.com/cra2ycoder/my-js-react-app.git
 
   - [Filterable Product Table](https://reactjs.org/docs/thinking-in-react.html)
   - [Routes](https://reacttraining.com/react-router/web/api/BrowserRouter)
+  - [ProductList]()
+  - [React Context]()
+  - [React Lifecycle]()
+  - [Users]()
 
 * **Later**
   - [Higher-Order Components](https://reactjs.org/docs/higher-order-components.html)
