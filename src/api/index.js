@@ -1,1 +1,2 @@
-export * from './ReactComponent'
+// export * from './ReactComponent'
+export * from './ReactDOMServer'
