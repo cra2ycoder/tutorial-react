@@ -26,4 +26,5 @@
 // export * from './advanced/Portals'
 // export * from './advanced/Ref'
 // export * from './advanced/RenderProps'
-export * from './advanced/PropTypes'
+// export * from './advanced/PropTypes'
+export * from './advanced/ForwardRef'
