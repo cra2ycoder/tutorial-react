@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from 'react'
 
 const sortList = [
-  { key: '', name: 'Sort By', selected: true },
+  { key: '', name: 'Sort By' },
   {
     key: 'sort_string_salePrice ASC',
     name: 'salePrice A TO Z',
-    selected: false,
   },
   {
     key: 'sort_string_salePrice DESC',
     name: 'salePrice Z TO A',
-    selected: false,
   },
-  { key: 'sort_string_price ASC', name: 'price A TO Z', selected: false },
-  { key: 'sort_string_price DESC', name: 'price Z TO A', selected: false },
-  { key: 'sort_number_price ASC', name: 'price LOW To High', selected: false },
+  { key: 'sort_string_price ASC', name: 'price A TO Z' },
+  { key: 'sort_string_price DESC', name: 'price Z TO A' },
+  { key: 'sort_number_price ASC', name: 'price LOW To High' },
   {
     key: 'sort_number_price DESC',
     name: 'price High  To  LOW',
-    selected: false,
   },
 ]
 
@@ -60,7 +57,7 @@ function useSortHook(options, idx) {
 function Sort(props) {
   const { sortOptions, sortValue, defaultIdx, handleSortChange } = useSortHook(
     sortList,
-    0
+    1
   )
 
   //   console.log(1)
