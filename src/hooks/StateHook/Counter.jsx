@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function Counter() {
   // adding the useState for count
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(2)
 
   function handleClick(e) {
     // updating the state on the button click
