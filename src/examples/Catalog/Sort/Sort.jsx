@@ -5,7 +5,6 @@ import { CatalogContext } from '../Catalog'
 
 function Sort(props) {
   const context = useContext(CatalogContext)
-
   const defaultSortOption = {
     key: '',
     name: 'Sort By',
