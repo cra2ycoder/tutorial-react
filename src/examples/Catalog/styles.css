@@ -3,3 +3,9 @@
   flex-wrap: wrap;
   flex-direction: row;
 }
+
+.catalog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

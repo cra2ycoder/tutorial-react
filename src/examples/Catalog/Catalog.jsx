@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
 import get from 'get-value'
 import { useCatalogAPI } from './hooks'
 import ProductCard from './ProductCard'
+import Sort from './Sort'
 import './styles.css'
+
+const CatalogContext = createContext({})
 
 function Catalog(props) {
   const {
@@ -32,21 +35,22 @@ function Catalog(props) {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <>
-          <div>
-            <h1>
+        <CatalogContext.Provider value={catalogResponse}>
+          <header className="catalog-header">
+            <h2>
               {catalogId}
               <span>({totalCount})</span>
-            </h1>
-            <div className="product-list-wrapper">
-              {productList.length > 0 && productList.map(renderProductListCard)}
-            </div>
-          </div>
-        </>
+            </h2>
+            <Sort />
+          </header>
+          <section className="product-list-wrapper">
+            {productList.length > 0 && productList.map(renderProductListCard)}
+          </section>
+        </CatalogContext.Provider>
       )}
     </>
   )
 }
 
-export { Catalog }
+export { Catalog, CatalogContext }
 export default Catalog
