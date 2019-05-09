@@ -1,29 +1,28 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useRef } from 'react'
 import get from 'get-value'
-import useCatalogSort from '../hooks'
+// import useCatalogSort from '../hooks'
 import { CatalogContext } from '../Catalog'
 
 function Sort(props) {
   const context = useContext(CatalogContext)
   const sortOptions = get(context, 'sort', [])
+  const [sortValue, setSortValue] = useState()
+  const selectRef = useRef()
 
-  console.log({ context, sortOptions })
-
-  //   const {
-  //     sortOptions,
-  //     sortValue,
-  //     defaultIdx,
-  //     handleSortChange,
-  //   } = useCatalogSort(sortList, 0)
-
-  //   console.log(1)
-  //   console.table(sortValue)
   const handleChange = e => {
-    console.log('handle change!')
+    e.preventDefault()
+    const currentIdx = +selectRef.current.value
+    const { key, name, selected } = sortOptions[currentIdx]
+    const [field, direction = ''] = key.split(' ')
+    setSortValue({ field, direction })
   }
 
+  useEffect(() => {
+    console.log(sortValue)
+  }, [sortValue])
+
   return (
-    <select onChange={handleChange} defaultValue={0}>
+    <select onChange={handleChange} defaultValue={0} ref={selectRef}>
       {sortOptions.map((item, id) => {
         const { key, name, selected } = item
         return (
