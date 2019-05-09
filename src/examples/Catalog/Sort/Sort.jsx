@@ -5,7 +5,15 @@ import { CatalogContext } from '../Catalog'
 
 function Sort(props) {
   const context = useContext(CatalogContext)
-  const sortOptions = get(context, 'sort', [])
+
+  const defaultSortOption = {
+    key: '',
+    name: 'Sort By',
+    selected: false,
+  }
+  const apiSortOptions = get(context, 'sort', [])
+  const sortOptions = [defaultSortOption, ...apiSortOptions]
+
   const [sortValue, setSortValue] = useState()
   const selectRef = useRef()
 
