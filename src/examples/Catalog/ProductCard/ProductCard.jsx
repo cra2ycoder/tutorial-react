@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import get from 'get-value'
 import './styled.css'
 
 function ProductCard(props) {
   const [isFavSelected, setIsFavSelected] = useState(false)
-  const { data } = props
+  const { product } = props
+  const { brand, name, imageURL } = get(product, 'properties', {})
+  const price = get(product, 'transactionPrice.price', 0)
 
   function toggleFavIcon(e) {
     setIsFavSelected(!isFavSelected)
@@ -12,15 +15,15 @@ function ProductCard(props) {
   return (
     <>
       <div className="product-card-image">
-        <img src={data.imageURL} />
+        <img src={imageURL} />
       </div>
       <div
         className={'fav-icon' + (isFavSelected ? ' selected' : '')}
         onClick={toggleFavIcon}
       />
-      <div>{data.name}</div>
-      <div>{data.price}</div>
-      <div>{data.brand}</div>
+      <div>{name}</div>
+      <div>{brand}</div>
+      <div>${price}</div>
     </>
   )
 }

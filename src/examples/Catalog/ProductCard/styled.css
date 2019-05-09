@@ -1,8 +1,3 @@
-.product-list-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
 
 .product-card {
   width: 140px;
