@@ -10,7 +10,8 @@ function Sort(props) {
     name: 'Sort By',
     selected: false,
   }
-  const apiSortOptions = get(context, 'sort', [])
+  const apiSortOptions = get(context, 'catalogResponse.sort', [])
+  const onSortChangeCbk = get(context, 'callbacks.sort.onChange', function() {})
   const sortOptions = [defaultSortOption, ...apiSortOptions]
 
   const [sortValue, setSortValue] = useState()
@@ -25,7 +26,8 @@ function Sort(props) {
   }
 
   useEffect(() => {
-    console.log(sortValue)
+    // console.log(sortValue)
+    onSortChangeCbk(sortValue)
   }, [sortValue])
 
   return (

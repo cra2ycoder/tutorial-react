@@ -30,12 +30,23 @@ function Catalog(props) {
     )
   }
 
+  function onSortChange(value) {
+    console.log('onSortChange ---->')
+    console.log(value)
+  }
+
+  const callbacks = {
+    sort: {
+      onChange: onSortChange,
+    },
+  }
+
   return (
     <>
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <CatalogContext.Provider value={catalogResponse}>
+        <CatalogContext.Provider value={{ catalogResponse, callbacks }}>
           <header className="catalog-header">
             <h2>
               {catalogId}
