@@ -1,8 +1,23 @@
 .product-card {
   position: relative;
-  padding: 10px;
-  border: 1px solid;
+  padding: 8px;
   flex: 20%;
+  background: white;
+  margin: 5px;
+  border-radius: 5px;
+}
+.product-card label {
+  display: flex;
+}
+
+.product-card-name {
+  font-weight: 100;
+}
+
+.product-card-brand {
+  font-size: 14px;
+  color: grey;
+  text-transform: uppercase;
 }
 
 .product-card-image {

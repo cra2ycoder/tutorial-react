@@ -1,0 +1,45 @@
+.product-card {
+  position: relative;
+  padding: 8px;
+  flex: 20%;
+  background: white;
+  margin: 5px;
+  border-radius: 5px;
+}
+.product-card label {
+  display: flex;
+}
+
+.product-card-name {
+  font-weight: 100;
+}
+
+.product-card-brand {
+  font-size: 14px;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.product-card-image {
+  width: 100%;
+  position: relative;
+}
+
+.product-card-image img {
+  width: 100%;
+}
+
+.fav-icon {
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.fav-icon.selected {
+  background: green;
+}

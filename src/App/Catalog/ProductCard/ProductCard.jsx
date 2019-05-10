@@ -21,9 +21,9 @@ function ProductCard(props) {
         className={'fav-icon' + (isFavSelected ? ' selected' : '')}
         onClick={toggleFavIcon}
       />
-      <div>{name}</div>
-      <div>{brand}</div>
-      <div>${price}</div>
+      <label className="product-card-name">{name}</label>
+      <label className="product-card-brand">{brand}</label>
+      <h3 className="product-card-price">${price}</h3>
     </>
   )
 }

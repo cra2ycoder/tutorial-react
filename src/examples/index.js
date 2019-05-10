@@ -2,7 +2,7 @@
 // export * from './Routes'
 // export * from './Users'
 // export * from './ProductList'
-export * from './Catalog'
+export * from './Catalog-bk'
 // export * from './ReactContext'
 // export * from './ReactLifeCycle'
 // export * from './Sort'
