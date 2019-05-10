@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import get from 'get-value'
-// import useCatalogSort from '../hooks'
 import { CatalogContext } from '../Catalog'
 
 function Sort(props) {
