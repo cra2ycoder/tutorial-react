@@ -15,7 +15,6 @@
 }
 
 .filter-section {
-  /* flex: 0 0 20%; */
   overflow-y: auto;
   padding-right: 1rem;
   box-sizing: border-box;

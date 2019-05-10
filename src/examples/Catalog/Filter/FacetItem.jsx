@@ -8,7 +8,7 @@ function FacetItem(props) {
     const { count, name, selected } = options
     return (
       <div className="facet-option" key={`${id}_${idx}`}>
-      <input type="checkbox" id={id} value={name} />
+        <input type="checkbox" id={id} value={name} />
         <label htmlFor={id}>{name}</label>
       </div>
     )
