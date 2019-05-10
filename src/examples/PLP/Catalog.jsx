@@ -1,13 +1,8 @@
-import React, { useState, useEffect, createContext } from 'react'
-import get from 'get-value'
-import querystring from 'querystring'
-import { useCatalogAPI } from './hooks'
+import React from 'react'
 import ProductCard from './ProductCard'
 import Sort from './Sort'
 import Filter from './Filter'
 import './styles.css'
-
-const CatalogContext = createContext({})
 
 function Catalog(props) {
   return (
@@ -15,7 +10,7 @@ function Catalog(props) {
       <header className="catalog-header">
         <h2>
           {'Plainteesmen'}
-          <span>({'20'})</span>
+          <span>(0)</span>
         </h2>
         <Sort />
       </header>
@@ -24,14 +19,23 @@ function Catalog(props) {
           <Filter />
         </section>
         <section className="product-list-section">
-          {'IRONMANBKKKK'.split('').map(item => (
-            <ProductCard product={item} />
-          ))}
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </section>
       </section>
     </>
   )
 }
 
-export { Catalog, CatalogContext }
+export { Catalog }
 export default Catalog
