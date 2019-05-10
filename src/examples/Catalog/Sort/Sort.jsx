@@ -27,7 +27,9 @@ function Sort(props) {
 
   useEffect(() => {
     // console.log(sortValue)
-    onSortChangeCbk(sortValue)
+    if (sortValue !== undefined) {
+      onSortChangeCbk(sortValue)
+    }
   }, [sortValue])
 
   return (

@@ -33,13 +33,15 @@ function Catalog(props) {
   function onSortChange(value) {
     console.log('onSortChange ---->')
     console.log(value)
-    if (value) {
-      const stringifySortValue = JSON.stringify({
-        sort: [value],
-      })
-      const sortQParams = { sort: stringifySortValue }
-      console.log(sortQParams)
-      setQueryParams(sortQParams)
+    if (value !== undefined) {
+      if (value.field !== '' && value.direction !== '') {
+        const stringifySortValue = JSON.stringify({
+          sort: [value],
+        })
+        setQueryParams({ sort: stringifySortValue })
+      } else {
+        setQueryParams(null)
+      }
     }
   }
 
