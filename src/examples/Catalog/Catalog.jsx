@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react'
 import get from 'get-value'
+import querystring from 'querystring'
 import { useCatalogAPI } from './hooks'
 import ProductCard from './ProductCard'
 import Sort from './Sort'
@@ -8,6 +9,15 @@ import './styles.css'
 const CatalogContext = createContext({})
 
 function Catalog(props) {
+  /**
+   * @note
+   * - where we have to get the query string from the url
+   * - that needs to be shared as default value to the useCatalogAPI
+   */
+  const qpFromURL =
+    '?sort={"sort":[{"field":"sort_string_salePrice","direction":"DESC"}]}'
+
+  const predefinedQP = querystring.parse(qpFromURL.slice(1))
   const {
     catalogId,
     setCategoryId,
@@ -15,12 +25,18 @@ function Catalog(props) {
     setQueryParams,
     catalogResponse,
     isLoading,
-  } = useCatalogAPI('plainteesmen', null)
+  } = useCatalogAPI('plainteesmen', predefinedQP)
+
+  const inputElement = document.getElementById('url-bar')
+  if (inputElement !== null && inputElement.value.length === 0) {
+    inputElement.value = qpFromURL
+  }
 
   // console.log({ catalogResponse, props, location })
 
   const totalCount = get(catalogResponse, 'pageableInfo.totalCount', 0)
   const productList = get(catalogResponse, 'product', [])
+
   var queryParamLocalObj = {}
 
   function setQueryParamWithURL() {
@@ -30,7 +46,6 @@ function Catalog(props) {
       qpStr.push(`${p}=${queryParamLocalObj[p]}`)
     }
 
-    const inputElement = document.getElementById('url-bar')
     inputElement.value = qpStr.join('&')
   }
 
@@ -52,6 +67,7 @@ function Catalog(props) {
         })
         const sortQP = { sort: stringifySortValue }
         queryParamLocalObj = { ...queryParamLocalObj, ...sortQP }
+        console.log(queryParamLocalObj)
         setQueryParams(sortQP)
       } else {
         setQueryParams(null)
