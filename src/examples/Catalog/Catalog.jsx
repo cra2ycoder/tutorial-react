@@ -17,7 +17,7 @@ function Catalog(props) {
     isLoading,
   } = useCatalogAPI('plainteesmen', null)
 
-  console.log({ catalogResponse, props, location })
+  // console.log({ catalogResponse, props, location })
 
   const totalCount = get(catalogResponse, 'pageableInfo.totalCount', 0)
   const productList = get(catalogResponse, 'product', [])
@@ -51,8 +51,8 @@ function Catalog(props) {
           sort: [value],
         })
         const sortQP = { sort: stringifySortValue }
-        setQueryParams(sortQP)
         queryParamLocalObj = { ...queryParamLocalObj, ...sortQP }
+        setQueryParams(sortQP)
       } else {
         setQueryParams(null)
       }

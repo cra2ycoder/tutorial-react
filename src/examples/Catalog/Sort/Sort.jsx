@@ -14,6 +14,8 @@ function Sort(props) {
   const onSortChangeCbk = get(context, 'callbacks.sort.onChange', function() {})
   const sortOptions = [defaultSortOption, ...apiSortOptions]
 
+  // console.log({ sortOptions })
+
   const [sortValue, setSortValue] = useState()
   const selectRef = useRef()
 
@@ -32,8 +34,15 @@ function Sort(props) {
     }
   }, [sortValue])
 
+  /**
+   * predefined selection
+   */
+  const defIdx = sortOptions.findIndex(
+    (item, index, array) => item.selected === true
+  )
+
   return (
-    <select onChange={handleChange} defaultValue={0} ref={selectRef}>
+    <select onChange={handleChange} defaultValue={defIdx || 0} ref={selectRef}>
       {sortOptions.map((item, id) => {
         const { key, name, selected } = item
         return (
