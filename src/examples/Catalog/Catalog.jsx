@@ -95,7 +95,10 @@ function Catalog(props) {
             <Sort />
           </header>
           <section className="product-list-wrapper">
-            {productList.length > 0 && productList.map(renderProductListCard)}
+            <section className="filter-section">{'filter'}</section>
+            <section className="product-list-section">
+              {productList.length > 0 && productList.map(renderProductListCard)}
+            </section>
           </section>
         </CatalogContext.Provider>
       )}
