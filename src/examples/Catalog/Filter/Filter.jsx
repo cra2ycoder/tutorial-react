@@ -7,17 +7,30 @@ import './styles.css'
 function Filter(props) {
   const context = useContext(CatalogContext)
   const facetFilter = get(context, 'catalogResponse.facetFilter', [])
+  const onFilterChangeCbk = get(
+    context,
+    'callbacks.filter.onChange',
+    function() {}
+  )
 
   // loading minimal for easy reading
   const facets = facetFilter.splice(0, 4)
   console.log({ facetFilter })
+
+  function onFilterChange(e) {
+    onFilterChangeCbk(e.target.value)
+  }
 
   function renderFacetList(facetItem, idx) {
     const { key, ...remainingProps } = facetItem
     console.log(facetItem)
     return (
       <React.Fragment key={key}>
-        <FacetItem id={key} {...remainingProps} />
+        <FacetItem
+          id={key}
+          onFilterClick={onFilterChange}
+          {...remainingProps}
+        />
       </React.Fragment>
     )
   }

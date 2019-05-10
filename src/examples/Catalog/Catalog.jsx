@@ -76,9 +76,17 @@ function Catalog(props) {
     }
   }
 
+  function onFilterChange(value) {
+    console.log('onFilterChange ---->')
+    console.log(value)
+  }
+
   const callbacks = {
     sort: {
       onChange: onSortChange,
+    },
+    filter: {
+      onChange: onFilterChange,
     },
   }
 

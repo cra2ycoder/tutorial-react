@@ -2,13 +2,13 @@ import React from 'react'
 import get from 'get-value'
 
 function FacetItem(props) {
-  const { id, name, values } = props
+  const { id, name, values, onFilterClick } = props
 
   function renderFacetOptions(options, idx) {
     const { count, name, selected } = options
     return (
       <div className="facet-option" key={`${id}_${idx}`}>
-        <input type="checkbox" id={id} value={name} />
+        <input type="checkbox" id={id} value={name} onClick={onFilterClick} />
         <label htmlFor={id}>{name}</label>
       </div>
     )
