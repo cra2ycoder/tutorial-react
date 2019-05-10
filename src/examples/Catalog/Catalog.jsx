@@ -4,6 +4,7 @@ import querystring from 'querystring'
 import { useCatalogAPI } from './hooks'
 import ProductCard from './ProductCard'
 import Sort from './Sort'
+import Filter from './Filter'
 import './styles.css'
 
 const CatalogContext = createContext({})
@@ -95,7 +96,9 @@ function Catalog(props) {
             <Sort />
           </header>
           <section className="product-list-wrapper">
-            <section className="filter-section">{'filter'}</section>
+            <section className="filter-section">
+              <Filter />
+            </section>
             <section className="product-list-section">
               {productList.length > 0 && productList.map(renderProductListCard)}
             </section>
