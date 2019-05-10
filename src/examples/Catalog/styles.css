@@ -1,9 +1,11 @@
-.product-list-wrapper,
+.product-list-wrapper {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
 .filter-section,
 .product-list-section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  overflow: hidden;
 }
 
 .catalog-header {
@@ -13,9 +15,13 @@
 }
 
 .filter-section {
-  flex: 0 0 20%;
+  /* flex: 0 0 20%; */
+  overflow-y: auto;
+  padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 .product-list-section {
-  flex: 0 0 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
 }

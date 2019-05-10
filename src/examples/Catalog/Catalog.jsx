@@ -26,7 +26,7 @@ function Catalog(props) {
     setQueryParams,
     catalogResponse,
     isLoading,
-  } = useCatalogAPI('plainteesmen', predefinedQP)
+  } = useCatalogAPI('plainteesboys', predefinedQP)
 
   const inputElement = document.getElementById('url-bar')
   if (inputElement !== null && inputElement.value.length === 0) {
