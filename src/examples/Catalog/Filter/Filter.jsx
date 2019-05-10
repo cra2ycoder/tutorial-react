@@ -17,13 +17,18 @@ function Filter(props) {
   const facets = facetFilter.splice(0, 4)
   console.log({ facetFilter })
 
+  // [{"field":"facet_fit","operation":"IN","value":["regular","medium"]}]
+
   function onFilterChange(e) {
-    onFilterChangeCbk(e.target.value)
+    const field = e.target.id
+    const value = e.target.value
+    const isSelected = e.target.checked
+    onFilterChangeCbk({ field, value, operation: 'IN' }, isSelected)
   }
 
   function renderFacetList(facetItem, idx) {
     const { key, ...remainingProps } = facetItem
-    console.log(facetItem)
+    // console.log(facetItem)
     return (
       <React.Fragment key={key}>
         <FacetItem

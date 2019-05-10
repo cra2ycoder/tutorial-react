@@ -76,9 +76,9 @@ function Catalog(props) {
     }
   }
 
-  function onFilterChange(value) {
+  function onFilterChange(value, isSelected) {
     console.log('onFilterChange ---->')
-    console.log(value)
+    console.log(value, isSelected)
   }
 
   const callbacks = {
