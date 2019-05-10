@@ -15,7 +15,7 @@ function Catalog(props) {
    * - that needs to be shared as default value to the useCatalogAPI
    */
   const qpFromURL =
-    '?sort={"sort":[{"field":"sort_string_salePrice","direction":"DESC"}]}'
+    '?sort={"sort":[{"field":"sort_string_salePrice","direction":"ASC"}]}'
 
   const predefinedQP = querystring.parse(qpFromURL.slice(1))
   const {
@@ -40,7 +40,7 @@ function Catalog(props) {
   var queryParamLocalObj = {}
 
   function setQueryParamWithURL() {
-    console.dir(queryParamLocalObj)
+    console.dir({ queryParamLocalObj })
     var qpStr = []
     for (var p in queryParamLocalObj) {
       qpStr.push(`${p}=${queryParamLocalObj[p]}`)
@@ -67,7 +67,6 @@ function Catalog(props) {
         })
         const sortQP = { sort: stringifySortValue }
         queryParamLocalObj = { ...queryParamLocalObj, ...sortQP }
-        console.log(queryParamLocalObj)
         setQueryParams(sortQP)
       } else {
         setQueryParams(null)
