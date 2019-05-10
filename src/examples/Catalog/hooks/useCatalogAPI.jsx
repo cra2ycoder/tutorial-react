@@ -8,7 +8,6 @@ function useCatalogAPI(catId, queries) {
   const [isLoading, setIsLoading] = useState(false)
 
   function getQueryParamsAsString() {
-    console.log(`getQueryParamsAsString`)
     return querystring.stringify(queryParams)
   }
 

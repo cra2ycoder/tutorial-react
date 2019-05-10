@@ -17,10 +17,22 @@ function Catalog(props) {
     isLoading,
   } = useCatalogAPI('plainteesmen', null)
 
-  console.log({ catalogResponse })
+  console.log({ catalogResponse, props, location })
 
   const totalCount = get(catalogResponse, 'pageableInfo.totalCount', 0)
   const productList = get(catalogResponse, 'product', [])
+  var queryParamLocalObj = {}
+
+  function setQueryParamWithURL() {
+    console.dir(queryParamLocalObj)
+    var qpStr = []
+    for (var p in queryParamLocalObj) {
+      qpStr.push(`${p}=${queryParamLocalObj[p]}`)
+    }
+
+    const inputElement = document.getElementById('url-bar')
+    inputElement.value = qpStr.join('&')
+  }
 
   function renderProductListCard(item, id) {
     return (
@@ -38,10 +50,13 @@ function Catalog(props) {
         const stringifySortValue = JSON.stringify({
           sort: [value],
         })
-        setQueryParams({ sort: stringifySortValue })
+        const sortQP = { sort: stringifySortValue }
+        setQueryParams(sortQP)
+        queryParamLocalObj = { ...queryParamLocalObj, ...sortQP }
       } else {
         setQueryParams(null)
       }
+      setQueryParamWithURL()
     }
   }
 
