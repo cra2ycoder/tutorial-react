@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import querystring from 'querystring'
 
 function useCatalogAPI(catId, queries) {
   const [catalogId, setCategoryId] = useState(catId)
@@ -7,7 +8,8 @@ function useCatalogAPI(catId, queries) {
   const [isLoading, setIsLoading] = useState(false)
 
   function getQueryParamsAsString() {
-    return JSON.stringify(queryParams)
+    console.log(`getQueryParamsAsString`)
+    return querystring.stringify(queryParams)
   }
 
   function fetchPLPList() {
@@ -15,7 +17,10 @@ function useCatalogAPI(catId, queries) {
       // to show loading
       setIsLoading(true)
 
-      const fetchURL = `https://api.skavacommerce.com/orchestrationservices/storefront/catalogs/categories/${catalogId}/products`
+      const baseUrl = `https://api.skavacommerce.com/orchestrationservices/storefront/catalogs/categories`
+      const qp = getQueryParamsAsString()
+
+      const fetchURL = `${baseUrl}/${catalogId}/products${qp ? `?` + qp : ''}`
       console.log(fetchURL)
 
       await fetch(fetchURL, {
@@ -43,7 +48,7 @@ function useCatalogAPI(catId, queries) {
     getData()
   }
 
-  useEffect(fetchPLPList, [])
+  useEffect(fetchPLPList, [queryParams])
 
   return {
     catalogId,
