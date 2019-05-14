@@ -9,7 +9,8 @@ function useCatalogAPI(catId, queries) {
 
   function getQueryParamsAsString() {
     // console.log(querystring.parse(location.search.slice(1)))
-    console.log(querystring.stringify(queryParams))
+    // console.log('getQueryParamsAsString ----->')
+    // console.log(querystring.stringify(queryParams))
     return querystring.stringify(queryParams)
   }
 

@@ -8,7 +8,13 @@ function FacetItem(props) {
     const { count, name, selected } = options
     return (
       <div className="facet-option" key={`${id}_${idx}`}>
-        <input type="checkbox" id={id} value={name} onClick={onFilterClick} />
+        <input
+          type="checkbox"
+          id={id}
+          value={name}
+          onClick={onFilterClick}
+          defaultChecked={selected}
+        />
         <label htmlFor={id}>{name}</label>
       </div>
     )

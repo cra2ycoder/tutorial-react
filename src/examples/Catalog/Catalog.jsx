@@ -15,10 +15,10 @@ function Catalog(props) {
    * - where we have to get the query string from the url
    * - that needs to be shared as default value to the useCatalogAPI
    */
-  const qpFromURL =
-    '?sort={"sort":[{"field":"sort_string_salePrice","direction":"ASC"}]}'
+  const qpFromURL = `?sort={"sort":[{"field":"sort_string_salePrice","direction":"ASC"}]}&filter={"filters":[{"field":"facet_name","value":"Boy's Pocket T-Shirt","operation":"IN"}]}`
 
   const predefinedQP = querystring.parse(qpFromURL.slice(1))
+
   const {
     catalogId,
     setCategoryId,
@@ -38,10 +38,12 @@ function Catalog(props) {
   const totalCount = get(catalogResponse, 'pageableInfo.totalCount', 0)
   const productList = get(catalogResponse, 'product', [])
 
-  var queryParamLocalObj = {}
+  var queryParamLocalObj = { ...predefinedQP }
+  console.log('init ... queryParamLocalObj ->')
+  console.dir(queryParamLocalObj)
 
   function setQueryParamWithURL() {
-    console.dir({ queryParamLocalObj })
+    // console.dir({ queryParamLocalObj })
     var qpStr = []
     for (var p in queryParamLocalObj) {
       qpStr.push(`${p}=${queryParamLocalObj[p]}`)
@@ -58,27 +60,43 @@ function Catalog(props) {
     )
   }
 
+  function updateQueryParam(obj, type) {
+    if (obj !== null) {
+      const stringifyObj = JSON.stringify(obj)
+      queryParamLocalObj = {
+        ...queryParamLocalObj,
+        ...{ [type]: stringifyObj },
+      }
+      // console.log({ queryParamLocalObj })
+      setQueryParams(queryParamLocalObj)
+    } else {
+      setQueryParams(null)
+    }
+    setQueryParamWithURL()
+  }
+
   function onSortChange(value) {
-    console.log('onSortChange ---->')
-    console.log(value)
+    // console.log('onSortChange ---->')
+    // console.log(value)
     if (value !== undefined) {
       if (value.field !== '' && value.direction !== '') {
-        const stringifySortValue = JSON.stringify({
-          sort: [value],
-        })
-        const sortQP = { sort: stringifySortValue }
-        queryParamLocalObj = { ...queryParamLocalObj, ...sortQP }
-        setQueryParams(sortQP)
+        updateQueryParam({ sort: [value] }, 'sort')
       } else {
-        setQueryParams(null)
+        updateQueryParam(null, 'sort')
       }
-      setQueryParamWithURL()
     }
   }
 
   function onFilterChange(value, isSelected) {
-    console.log('onFilterChange ---->')
-    console.log(value, isSelected)
+    // console.log('onFilterChange ---->')
+    // console.log(value, isSelected)
+    if (value !== undefined) {
+      if (value.field !== '' && value.value !== '') {
+        updateQueryParam({ filter: [value] }, 'filters')
+      } else {
+        updateQueryParam(null, 'filters')
+      }
+    }
   }
 
   const callbacks = {
