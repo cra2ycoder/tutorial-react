@@ -39,7 +39,8 @@ function Catalog(props) {
   const productList = get(catalogResponse, 'product', [])
 
   var queryParamLocalObj = { ...predefinedQP }
-  console.log('init ... queryParamLocalObj ->')
+  // var filterLocalList = {}
+  // console.log('init ... queryParamLocalObj ->')
   console.dir(queryParamLocalObj)
 
   function setQueryParamWithURL() {
@@ -75,24 +76,56 @@ function Catalog(props) {
     setQueryParamWithURL()
   }
 
-  function onSortChange(value) {
+  function onSortChange(newSort) {
     // console.log('onSortChange ---->')
-    // console.log(value)
-    if (value !== undefined) {
-      if (value.field !== '' && value.direction !== '') {
-        updateQueryParam({ sort: [value] }, 'sort')
+    // console.log(newSort)
+    if (newSort !== undefined) {
+      if (newSort.field !== '' && newSort.direction !== '') {
+        updateQueryParam({ sort: [newSort] }, 'sort')
       } else {
         updateQueryParam(null, 'sort')
       }
     }
   }
 
-  function onFilterChange(value, isSelected) {
+  function mergeFilters(newFilter) {
+    const prevFilterList = JSON.parse(queryParamLocalObj.filter)
+    console.log({ prevFilterList })
+
+    const merge = (pf, nf) => {
+      const concat = { ...pf, ...nf }
+      return {
+        ...concat,
+        value: [pf.value, nf.value],
+      }
+    }
+
+    if (
+      prevFilterList !== null &&
+      prevFilterList !== undefined &&
+      prevFilterList.filters.length > 0 &&
+      (newFilter !== null || newFilter !== undefined)
+    ) {
+      const prevFilter = prevFilterList.filters.filter(
+        item => item.field === newFilter.field
+      )
+
+      if (prevFilter.length > 0) {
+        const mergedFilters = merge(prevFilter[0], newFilter)
+        return mergedFilters
+      }
+    }
+
+    return newFilter
+  }
+
+  function onFilterChange(newFilter, isSelected) {
     // console.log('onFilterChange ---->')
-    // console.log(value, isSelected)
-    if (value !== undefined) {
-      if (value.field !== '' && value.value !== '') {
-        updateQueryParam({ filter: [value] }, 'filters')
+    // console.log(newFilter, isSelected)
+    if (newFilter !== undefined) {
+      if (newFilter.field !== '' && newFilter.value !== '') {
+        const value = mergeFilters(newFilter)
+        updateQueryParam({ filters: [value] }, 'filters')
       } else {
         updateQueryParam(null, 'filters')
       }
