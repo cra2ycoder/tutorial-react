@@ -14,7 +14,7 @@ function Filter(props) {
   )
 
   // loading minimal for easy reading
-  const facets = facetFilter.splice(0, 4)
+  const facets = facetFilter //.splice(0, 4)
   console.log({ facetFilter })
 
   // [{"field":"facet_fit","operation":"IN","value":["regular","medium"]}]

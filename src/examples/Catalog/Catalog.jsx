@@ -125,9 +125,9 @@ function Catalog(props) {
     if (newFilter !== undefined) {
       if (newFilter.field !== '' && newFilter.value !== '') {
         const value = mergeFilters(newFilter)
-        updateQueryParam({ filters: [value] }, 'filters')
+        updateQueryParam({ filters: [value] }, 'filter')
       } else {
-        updateQueryParam(null, 'filters')
+        updateQueryParam(null, 'filter')
       }
     }
   }
