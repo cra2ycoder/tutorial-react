@@ -15,7 +15,7 @@ function Catalog(props) {
    * - where we have to get the query string from the url
    * - that needs to be shared as default value to the useCatalogAPI
    */
-  const qpFromURL = `?sort={"sort":[{"field":"sort_string_salePrice","direction":"ASC"}]}&filter={"filters":[{"field":"facet_name","value":"Boy's Pocket T-Shirt","operation":"IN"}]}`
+  const qpFromURL = `` //`?sort={"sort":[{"field":"sort_string_salePrice","direction":"ASC"}]}&filter={"filters":[{"field":"facet_name","value":"Boy's Pocket T-Shirt","operation":"IN"}]}`
 
   const predefinedQP = querystring.parse(qpFromURL.slice(1))
 
@@ -29,9 +29,9 @@ function Catalog(props) {
   } = useCatalogAPI('plainteesboys', predefinedQP)
 
   const inputElement = document.getElementById('url-bar')
-  if (inputElement !== null && inputElement.value.length === 0) {
-    inputElement.value = qpFromURL
-  }
+  // if (inputElement !== null && inputElement.value.length === 0) {
+  //   inputElement.value = qpFromURL
+  // }
 
   // console.log({ catalogResponse, props, location })
 
@@ -89,8 +89,20 @@ function Catalog(props) {
   }
 
   function mergeFilters(newFilter) {
-    const prevFilterList = JSON.parse(queryParamLocalObj.filter)
-    console.log({ prevFilterList })
+    if (newFilter === null && newFilter === undefined) {
+      return null
+    }
+
+    var prevFilterObject = {}
+
+    if (
+      queryParamLocalObj !== undefined &&
+      Object.keys(queryParamLocalObj).length > 0
+    ) {
+      prevFilterObject = JSON.parse(queryParamLocalObj.filter)
+    }
+
+    // console.log({ prevFilterObject })
 
     const merge = (pf, nf) => {
       const concat = { ...pf, ...nf }
@@ -100,23 +112,30 @@ function Catalog(props) {
       }
     }
 
-    if (
-      prevFilterList !== null &&
-      prevFilterList !== undefined &&
-      prevFilterList.filters.length > 0 &&
-      (newFilter !== null || newFilter !== undefined)
-    ) {
-      const prevFilter = prevFilterList.filters.filter(
-        item => item.field === newFilter.field
-      )
+    if (prevFilterObject.filters !== undefined) {
+      /**
+       * making sure that the new filter is already available
+       */
+      var prevFilterIdx = -1
+      const prevFilter = prevFilterObject.filters.filter((item, idx) => {
+        prevFilterIdx = idx
+        return item.field === newFilter.field
+      })
 
       if (prevFilter.length > 0) {
+        console.log(`prevFilterIdx: ${prevFilterIdx}`)
         const mergedFilters = merge(prevFilter[0], newFilter)
-        return mergedFilters
+        prevFilterObject.filters[prevFilterIdx] = mergedFilters
+        console.log({ mergedFilters })
+      } else {
+        prevFilterObject.filters.push(newFilter)
       }
+      console.log('returing....!')
+      console.log({ prevFilterObject })
+      return prevFilterObject
+    } else {
+      return { filters: [newFilter] }
     }
-
-    return newFilter
   }
 
   function onFilterChange(newFilter, isSelected) {
@@ -125,7 +144,7 @@ function Catalog(props) {
     if (newFilter !== undefined) {
       if (newFilter.field !== '' && newFilter.value !== '') {
         const value = mergeFilters(newFilter)
-        updateQueryParam({ filters: [value] }, 'filter')
+        updateQueryParam(value, 'filter')
       } else {
         updateQueryParam(null, 'filter')
       }
